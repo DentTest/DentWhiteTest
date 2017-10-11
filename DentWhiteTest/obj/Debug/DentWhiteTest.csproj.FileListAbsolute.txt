@@ -20,3 +20,14 @@ F:\DentTest\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.csprojResolveAss
 F:\DentTest\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.csproj.CoreCompileInputs.cache
 F:\DentTest\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.dll
 F:\DentTest\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.pdb
+E:\德雅项目文档\德雅客户端\DentWhiteTest\DentWhiteTest\bin\Debug\DentWhiteTest.dll
+E:\德雅项目文档\德雅客户端\DentWhiteTest\DentWhiteTest\bin\Debug\DentWhiteTest.pdb
+E:\德雅项目文档\德雅客户端\DentWhiteTest\DentWhiteTest\bin\Debug\Castle.Core.dll
+E:\德雅项目文档\德雅客户端\DentWhiteTest\DentWhiteTest\bin\Debug\TestStack.White.dll
+E:\德雅项目文档\德雅客户端\DentWhiteTest\DentWhiteTest\bin\Debug\Castle.Core.xml
+E:\德雅项目文档\德雅客户端\DentWhiteTest\DentWhiteTest\bin\Debug\TestStack.White.pdb
+E:\德雅项目文档\德雅客户端\DentWhiteTest\DentWhiteTest\bin\Debug\TestStack.White.xml
+E:\德雅项目文档\德雅客户端\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.csprojResolveAssemblyReference.cache
+E:\德雅项目文档\德雅客户端\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.csproj.CoreCompileInputs.cache
+E:\德雅项目文档\德雅客户端\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.dll
+E:\德雅项目文档\德雅客户端\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.pdb
