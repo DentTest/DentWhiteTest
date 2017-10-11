@@ -1,0 +1,44 @@
+﻿<Window x:Class="WhiteWindow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        ResizeMode="NoResize"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WhiteWindow" 
+        mc:Ignorable="d"
+        Title="德雅自动化测试系统" Height="620" Width="1000">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="600"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="10">
+            <DockPanel>
+                <Button x:Name="btnALL" Content="一键测试" Click="btnALL_Click"/>
+                <Button x:Name="btnLogin" Content="登录模块" Click="btnLogin_Click"/>
+            </DockPanel>
+            <Label Content="--- 德雅管理后台测试 ---" Margin="0,10,0,0"/>
+            <DockPanel>
+                <Button x:Name="btnHospital" Content="医院管理模块" Click="btnHospital_Click"/>
+                <Button  x:Name="btnDoctor" Content="医生管理模块" Click="btnDoctor_Click"/>
+                <Button  x:Name="btnDocker" Content="排牙师管理模块" Click="btnDocker_Click"/>
+            </DockPanel>
+            <DockPanel>
+                <Button  x:Name="btnRole" Content="角色管理模块" Click="btnRole_Click"/>
+                <Button  x:Name="btnUser" Content="用户管理模块" Click="btnUser_Click"/>
+            </DockPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left">
+            <Label Content="测试结果信息：" />
+            <ListBox x:Name="lbInfo" ItemsSource="{Binding Global.LstInfo}" Height="500" Width="500" FontStretch="Expanded" SelectionChanged="ListBox_SelectionChanged"/>
+        </StackPanel>
+    </Grid>
+</Window>
