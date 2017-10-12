@@ -11,16 +11,19 @@ namespace DentWhiteTest.Contacts
 {
     public class Global
     {
-
         static Global()
         {
             LstInfo = new ObservableCollection<string>();
         }
+
         /// <summary>
         /// 测试结果信息列表
         /// </summary>
         public static ObservableCollection<string> LstInfo { get; set; }
 
-        public static Window win_Dent { get; set; }
+        /// <summary>
+        /// 排牙师客户端
+        /// </summary>
+        public static Window Win_Docker { get; set; }
     }
 }

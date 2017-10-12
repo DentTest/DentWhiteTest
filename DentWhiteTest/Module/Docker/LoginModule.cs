@@ -18,7 +18,7 @@ namespace WhiteFrameDemo.Module
             Global.LstInfo.Add(msg);
             if (res_Launch)
             {
-                Global.win_Dent = appWin;
+                Global.Win_Docker = appWin;
             }
             else
             {
@@ -26,12 +26,12 @@ namespace WhiteFrameDemo.Module
             }
 
             //测试登录窗口,登录成功
-            res_Launch = LoginTest.LoginDocker_Success(Global.win_Dent, out string msg1);
+            res_Launch = LoginTest.LoginDocker_Success(Global.Win_Docker, out string msg1);
             Global.LstInfo.Add(msg1);
             if (!res_Launch) return;
 
             //关闭客户端
-            Global.win_Dent.Close();
+            Global.Win_Docker.Close();
 
             #endregion
 
@@ -42,7 +42,7 @@ namespace WhiteFrameDemo.Module
             Global.LstInfo.Add(msg2);
             if (res_Launch)
             {
-                Global.win_Dent = appWin1;
+                Global.Win_Docker = appWin1;
             }
             else
             {
@@ -50,12 +50,12 @@ namespace WhiteFrameDemo.Module
             }
 
              //测试登录窗口,账号密码为空
-            res_Launch = LoginTest.LoginDocker_UserNull_PwdNull(Global.win_Dent, out string msg3);
+            res_Launch = LoginTest.LoginDocker_UserNull_PwdNull(Global.Win_Docker, out string msg3);
             Global.LstInfo.Add(msg3);
             if (!res_Launch) return;
 
             //关闭客户端
-            Global.win_Dent.Close();
+            Global.Win_Docker.Close();
 
             #endregion
 
@@ -66,7 +66,7 @@ namespace WhiteFrameDemo.Module
             Global.LstInfo.Add(msg4);
             if (res_Launch)
             {
-                Global.win_Dent = appWin2;
+                Global.Win_Docker = appWin2;
             }
             else
             {
@@ -74,12 +74,12 @@ namespace WhiteFrameDemo.Module
             }
 
             //测试登录窗口,账号为空
-            res_Launch = LoginTest.LoginDocker_UserNull(Global.win_Dent, out string msg5);
+            res_Launch = LoginTest.LoginDocker_UserNull(Global.Win_Docker, out string msg5);
             Global.LstInfo.Add(msg5);
             if (!res_Launch) return;
 
             //关闭客户端
-            Global.win_Dent.Close();
+            Global.Win_Docker.Close();
 
             #endregion
 
@@ -90,7 +90,7 @@ namespace WhiteFrameDemo.Module
             Global.LstInfo.Add(msg6);
             if (res_Launch)
             {
-                Global.win_Dent = appWin3;
+                Global.Win_Docker = appWin3;
             }
             else
             {
@@ -98,12 +98,12 @@ namespace WhiteFrameDemo.Module
             }
 
             //测试登录窗口,密码为空
-            res_Launch = LoginTest.LoginDocker_PwdNull(Global.win_Dent, out string msg7);
+            res_Launch = LoginTest.LoginDocker_PwdNull(Global.Win_Docker, out string msg7);
             Global.LstInfo.Add(msg7);
             if (!res_Launch) return;
 
             //关闭客户端
-            Global.win_Dent.Close();
+            Global.Win_Docker.Close();
 
             #endregion
         }

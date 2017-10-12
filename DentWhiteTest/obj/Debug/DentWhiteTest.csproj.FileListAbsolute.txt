@@ -20,3 +20,14 @@ F:\DentTest\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.csprojResolveAss
 F:\DentTest\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.csproj.CoreCompileInputs.cache
 F:\DentTest\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.dll
 F:\DentTest\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.pdb
+F:\DentWhiteTest\DentWhiteTest\bin\Debug\DentWhiteTest.dll
+F:\DentWhiteTest\DentWhiteTest\bin\Debug\DentWhiteTest.pdb
+F:\DentWhiteTest\DentWhiteTest\bin\Debug\Castle.Core.dll
+F:\DentWhiteTest\DentWhiteTest\bin\Debug\TestStack.White.dll
+F:\DentWhiteTest\DentWhiteTest\bin\Debug\Castle.Core.xml
+F:\DentWhiteTest\DentWhiteTest\bin\Debug\TestStack.White.pdb
+F:\DentWhiteTest\DentWhiteTest\bin\Debug\TestStack.White.xml
+F:\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.csprojResolveAssemblyReference.cache
+F:\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.csproj.CoreCompileInputs.cache
+F:\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.dll
+F:\DentWhiteTest\DentWhiteTest\obj\Debug\DentWhiteTest.pdb

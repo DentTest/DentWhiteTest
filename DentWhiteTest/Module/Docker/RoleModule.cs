@@ -22,10 +22,10 @@ namespace DentWhiteTest.Module
             Global.LstInfo.Add(msg);
             if (res_Launch)
             {
-                Global.win_Dent = appWin;
+                Global.Win_Docker = appWin;
 
                 //启动成功，登录
-                var _login = LoginTest.LoginDocker_Success(Global.win_Dent,out string msg_login);
+                var _login = LoginTest.LoginDocker_Success(Global.Win_Docker,out string msg_login);
                 Global.LstInfo.Add(msg_login);
                 //如果登录失败，返回
                 if (!_login) return;
@@ -38,17 +38,17 @@ namespace DentWhiteTest.Module
             #region 角色列表
 
             //点击角色管理菜单，加载所有角色
-            res_Launch = RoleTest.Load_RoleList(Global.win_Dent, out string msg1);
+            res_Launch = RoleTest.Load_RoleList(Global.Win_Docker, out string msg1);
             Global.LstInfo.Add(msg1);
             if (!res_Launch) return;
 
             //输入角色名称，点击查询按钮，加载该角色
-            res_Launch = RoleTest.Search_RoleName(Global.win_Dent, out string msg2);
+            res_Launch = RoleTest.Search_RoleName(Global.Win_Docker, out string msg2);
             Global.LstInfo.Add(msg2);
             if (!res_Launch) return;
 
             //角色名称为空，点击查询按钮，加载所有角色
-            res_Launch = RoleTest.Search_RoleNameNull(Global.win_Dent, out string msg3);
+            res_Launch = RoleTest.Search_RoleNameNull(Global.Win_Docker, out string msg3);
             Global.LstInfo.Add(msg3);
             if (!res_Launch) return;
 
@@ -56,7 +56,7 @@ namespace DentWhiteTest.Module
 
 
             //关闭客户端
-            Global.win_Dent.Close();
+            Global.Win_Docker.Close();
         }
     }
 }
