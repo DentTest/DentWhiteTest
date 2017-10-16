@@ -280,12 +280,12 @@ namespace DentWhiteTest.TestCase
                     string add_win = appWin.Get<Label>(SearchCriteria.ByText("新增角色")).ToString();
 
                     msg = "测试【新增角色成功，同时关闭新增角色窗口】--未通过，用时：" + (endTime - startTime).TotalSeconds;
-                    return true;
+                    return false;
                 }
                 catch
                 {
                     msg = "测试【新增角色成功，同时关闭新增角色窗口】--通过，用时：" + (endTime - startTime).TotalSeconds;
-                    return false;
+                    return true;
                 }
             }
             catch (Exception e)
