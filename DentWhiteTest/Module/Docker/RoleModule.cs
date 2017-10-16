@@ -54,6 +54,34 @@ namespace DentWhiteTest.Module
 
             #endregion
 
+            #region 新增角色
+
+            //新增角色，角色名称为空
+            res_Launch = RoleTest.AddRole_RoleNameBull(Global.Win_Docker, out string msg4);
+            Global.LstInfo.Add(msg4);
+            if (!res_Launch) return;
+
+            //新增角色，角色英文别名为空
+            res_Launch = RoleTest.AddRole_EnRoleNameBull(Global.Win_Docker, out string msg5);
+            Global.LstInfo.Add(msg5);
+            if (!res_Launch) return;
+
+            //新增角色成功，同时关闭新增角色窗口
+            res_Launch = RoleTest.AddRoleSucc(Global.Win_Docker, out string msg6);
+            Global.LstInfo.Add(msg6);
+            if (!res_Launch) return;
+
+            //新增角色，点击取消按钮，关闭新增角色窗口
+            res_Launch = RoleTest.AddRole_ClickCancle(Global.Win_Docker, out string msg7);
+            Global.LstInfo.Add(msg7);
+            if (!res_Launch) return;
+
+            #endregion
+
+            #region 编辑角色
+
+            #endregion
+
 
             //关闭客户端
             Global.Win_Docker.Close();
