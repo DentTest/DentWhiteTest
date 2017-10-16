@@ -51,6 +51,7 @@
     <Compile Include="Common\WinHelp.cs" />
     <Compile Include="Contacts\Const.cs" />
     <Compile Include="Contacts\Global.cs" />
+    <Compile Include="Helper\Generate.cs" />
     <Compile Include="Helper\language.cs" />
     <Compile Include="Module\Docker\DockerModule.cs" />
     <Compile Include="Module\Docker\DoctorModule.cs" />

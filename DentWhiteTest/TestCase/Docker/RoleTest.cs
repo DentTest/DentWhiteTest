@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DentWhiteTest.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -151,11 +152,11 @@ namespace DentWhiteTest.TestCase
                 btnAddRole.Click();
 
                 //角色名称为空
-                TextBox txtRoleName = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
+                TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
                 txtRoleName.Text = "";
 
                 //角色英文别名不为空
-                TextBox txtRoleAlias = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
+                TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
                 txtRoleAlias.Text = "en";
 
                 //点击确定按钮
@@ -202,11 +203,11 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //角色名称不为空
-                TextBox txtRoleName = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
+                TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
                 txtRoleName.BulkText = "角色";
 
                 //角色英文别名为空
-                TextBox txtRoleAlias = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
+                TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
                 txtRoleAlias.Text = "";
 
                 //点击确定按钮
@@ -253,12 +254,12 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //角色名称不为空
-                TextBox txtRoleName = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
-                txtRoleName.BulkText = "角色";
+                TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
+                txtRoleName.BulkText = Generate.GenerateChineseWords(3);
 
                 //角色英文别名为空
-                TextBox txtRoleAlias = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
-                txtRoleAlias.Text = "juese";
+                TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
+                txtRoleAlias.Text = Generate.GenerateEnRandom(5);
 
                 //点击确定按钮
                 Button btnComfirmAddRole = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmAddRole"));
@@ -267,22 +268,23 @@ namespace DentWhiteTest.TestCase
                 var endTime = DateTime.Now;
 
                 try
-                {                    
+                {
+                    Thread.Sleep(300); 
                     //捕捉提醒信息，如果能捕捉到，则测试通过
                     string succ_info = appWin.Get<Label>(SearchCriteria.ByText("新增成功！")).ToString();
                     //关闭提醒框
                     Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
                     btnTips.Click();
 
-                    //捕捉新增角色窗口，如果能捕捉到，则测试通过
+                    //捕捉新增角色窗口，如果不能捕捉到，则测试通过
                     string add_win = appWin.Get<Label>(SearchCriteria.ByText("新增角色")).ToString();
 
-                    msg = "测试【新增角色成功，同时关闭新增角色窗口】--通过，用时：" + (endTime - startTime).TotalSeconds;
+                    msg = "测试【新增角色成功，同时关闭新增角色窗口】--未通过，用时：" + (endTime - startTime).TotalSeconds;
                     return true;
                 }
                 catch
                 {
-                    msg = "测试【新增角色成功，同时关闭新增角色窗口】--未通过，用时：" + (endTime - startTime).TotalSeconds;
+                    msg = "测试【新增角色成功，同时关闭新增角色窗口】--通过，用时：" + (endTime - startTime).TotalSeconds;
                     return false;
                 }
             }
@@ -317,18 +319,15 @@ namespace DentWhiteTest.TestCase
 
                 try
                 {
-
-                    //捕捉新增角色窗口，如果能捕捉到，则测试通过
+                    //捕捉新增角色窗口，如果不能捕捉到，则测试通过
                     string add_win = appWin.Get<Label>(SearchCriteria.ByText("新增角色")).ToString();
-
-                    msg = "测试【新增角色，点击取消按钮，关闭新增角色窗口】--通过，用时：" + (endTime - startTime).TotalSeconds;
-                    return true;
-
+                    msg = "测试【新增角色，点击取消按钮，关闭新增角色窗口】--未通过，未关闭新增窗口。用时：" + (endTime - startTime).TotalSeconds;
+                    return false;
                 }
                 catch
                 {
-                    msg = "测试【新增角色，点击取消按钮，关闭新增角色窗口】--未通过，未关闭新增窗口。用时：" + (endTime - startTime).TotalSeconds;
-                    return false;
+                    msg = "测试【新增角色，点击取消按钮，关闭新增角色窗口】--通过，用时：" + (endTime - startTime).TotalSeconds;
+                    return true;
                 }
             }
             catch (Exception e)
