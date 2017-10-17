@@ -80,6 +80,31 @@ namespace DentWhiteTest.Module
 
             #region 编辑角色
 
+            //编辑角色，角色名称为空
+            res_Launch = RoleTest.EditRole_RoleNameBull(Global.Win_Docker, out string msg8);
+            Global.LstInfo.Add(msg8);
+            if (!res_Launch) return;
+
+            //编辑角色，角色英文别名为空
+            res_Launch = RoleTest.EditRole_EnRoleNameBull(Global.Win_Docker, out string msg9);
+            Global.LstInfo.Add(msg9);
+            if (!res_Launch) return;
+
+            //编辑角色，无修改操作，点击确定按钮
+            res_Launch = RoleTest.EditRole_NoEdit(Global.Win_Docker, out string msg10);
+            Global.LstInfo.Add(msg10);
+            if (!res_Launch) return;
+
+            //编辑角色，修改角色名称和角色英文别名
+            res_Launch = RoleTest.EditRole(Global.Win_Docker, out string msg11);
+            Global.LstInfo.Add(msg11);
+            if (!res_Launch) return;
+
+            //编辑角色，点击取消按钮，关闭编辑角色窗口
+            res_Launch = RoleTest.EditRole_ClickCancle(Global.Win_Docker, out string msg12);
+            Global.LstInfo.Add(msg12);
+            if (!res_Launch) return;
+
             #endregion
 
 

@@ -152,11 +152,11 @@ namespace DentWhiteTest.TestCase
                 btnAddRole.Click();
 
                 //角色名称为空
-                TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
+                TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
                 txtRoleName.Text = "";
 
                 //角色英文别名不为空
-                TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
+                TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
                 txtRoleAlias.Text = "en";
 
                 //点击确定按钮
@@ -203,11 +203,11 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //角色名称不为空
-                TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
+                TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
                 txtRoleName.BulkText = "角色";
 
                 //角色英文别名为空
-                TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
+                TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
                 txtRoleAlias.Text = "";
 
                 //点击确定按钮
@@ -254,11 +254,11 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //角色名称不为空
-                TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
+                TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
                 txtRoleName.BulkText = Generate.GenerateChineseWords(3);
 
                 //角色英文别名为空
-                TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
+                TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
                 txtRoleAlias.Text = Generate.GenerateEnRandom(5);
 
                 //点击确定按钮
@@ -340,6 +340,268 @@ namespace DentWhiteTest.TestCase
         #endregion
 
         #region 编辑角色
+
+        /// <summary>
+        /// 编辑角色，角色名称为空
+        /// </summary>
+        /// <param name="appWin"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public static bool EditRole_RoleNameBull(Window appWin, out string msg)
+        {
+            try
+            {
+                var startTime = DateTime.Now;
+
+                //点击编辑按钮
+                Button btnAddRole = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditRole").AndIndex(10));
+                btnAddRole.Click();
+
+                //角色名称为空
+                TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
+                txtRoleName.Text = "";
+
+                //角色英文别名不为空
+                TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
+                txtRoleAlias.Text = "en";
+
+                //点击确定按钮
+                Button btnComfirmEditRole = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmEditRole"));
+                btnComfirmEditRole.Click();
+
+                var endTime = DateTime.Now;
+
+                try
+                {
+                    //捕捉报错信息，如果能捕捉到，则测试通过
+                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("角色名称不能为空！")).ToString();
+                    //关闭提醒框
+                    Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
+                    btnTips.Click();
+
+                    msg = "测试【编辑角色，角色名称为空】--通过，用时：" + (endTime - startTime).TotalSeconds;
+                    return true;
+
+                }
+                catch
+                {
+                    msg = "测试【编辑角色，角色名称为空】--未通过，缺少角色名称验证提醒。用时：" + (endTime - startTime).TotalSeconds;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                msg = "测试【编辑角色，角色名称为空】--失败，原因：" + e.ToString();
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 编辑角色，角色英文别名为空
+        /// </summary>
+        /// <param name="appWin"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public static bool EditRole_EnRoleNameBull(Window appWin, out string msg)
+        {
+            try
+            {
+                var startTime = DateTime.Now;
+
+                //角色名称为空
+                TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
+                txtRoleName.BulkText = "角色";
+
+                //角色英文别名不为空
+                TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
+                txtRoleAlias.Text = "";
+
+                //点击确定按钮
+                Button btnComfirmEditRole = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmEditRole"));
+                btnComfirmEditRole.Click();
+
+                var endTime = DateTime.Now;
+
+                try
+                {
+                    //捕捉报错信息，如果能捕捉到，则测试通过
+                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("角色英文别名不能为空！")).ToString();
+                    //关闭提醒框
+                    Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
+                    btnTips.Click();
+
+                    //点击取消按钮
+                    Button btnCancleEditRole = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnCancleEditRole"));
+                    btnCancleEditRole.Click();
+
+                    msg = "测试【编辑角色，角色英文别名为空】--通过，用时：" + (endTime - startTime).TotalSeconds;
+                    return true;
+
+                }
+                catch
+                {
+                    msg = "测试【编辑角色，角色英文别名为空】--未通过，缺少角色英文别名验证提醒。用时：" + (endTime - startTime).TotalSeconds;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                msg = "测试【编辑角色，角色英文别名为空】--失败，原因：" + e.ToString();
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 编辑角色，无修改操作，点击确定按钮
+        /// </summary>
+        /// <param name="appWin"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public static bool EditRole_NoEdit(Window appWin, out string msg)
+        {
+            try
+            {
+                var startTime = DateTime.Now;
+
+                //点击编辑按钮
+                Button btnAddRole = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditRole").AndIndex(10));
+                btnAddRole.Click();
+
+                //点击确定按钮
+                Button btnComfirmEditRole = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmEditRole"));
+                btnComfirmEditRole.Click();
+
+                var endTime = DateTime.Now;
+
+                try
+                {
+                    //捕捉报错信息，如果能捕捉到，则测试通过
+                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("编辑成功！")).ToString();
+                    //关闭提醒框
+                    Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
+                    btnTips.Click();
+
+                    //捕捉编辑角色窗口，如果不能捕捉到，则测试通过
+                    string add_win = appWin.Get<Label>(SearchCriteria.ByText("编辑角色")).ToString();
+
+                    msg = "测试【编辑角色，无修改操作，点击确定按钮】--未通过，用时：" + (endTime - startTime).TotalSeconds;
+                    return false;
+
+                }
+                catch
+                {
+                    msg = "测试【编辑角色，无修改操作，点击确定按钮】--通过，用时：" + (endTime - startTime).TotalSeconds;
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                msg = "测试【编辑角色，无修改操作，点击确定按钮】--失败，原因：" + e.ToString();
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 编辑角色，修改角色名称和角色英文别名
+        /// </summary>
+        /// <param name="appWin"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public static bool EditRole(Window appWin, out string msg)
+        {
+            try
+            {
+                var startTime = DateTime.Now;
+
+                //点击编辑按钮
+                Button btnAddRole = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditRole").AndIndex(10));
+                btnAddRole.Click();
+
+                //修改角色名称
+                TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
+                txtRoleName.BulkText = Generate.GenerateChineseWords(3);
+
+                //修改角色英文别名
+                TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
+                txtRoleAlias.Text = Generate.GenerateEnRandom(5);
+
+                //点击确定按钮
+                Button btnComfirmEditRole = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmEditRole"));
+                btnComfirmEditRole.Click();
+
+                var endTime = DateTime.Now;
+
+                try
+                {
+                    //捕捉报错信息，如果能捕捉到，则测试通过
+                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("编辑成功！")).ToString();
+                    //关闭提醒框
+                    Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
+                    btnTips.Click();
+
+                    //捕捉编辑角色窗口，如果不能捕捉到，则测试通过
+                    string add_win = appWin.Get<Label>(SearchCriteria.ByText("编辑角色")).ToString();
+
+                    msg = "测试【编辑角色，修改角色名称和角色英文别名】--未通过，用时：" + (endTime - startTime).TotalSeconds;
+                    return false;
+
+                }
+                catch
+                {
+                    msg = "测试【编辑角色，修改角色名称和角色英文别名】--通过，用时：" + (endTime - startTime).TotalSeconds;
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                msg = "测试【编辑角色，修改角色名称和角色英文别名】--失败，原因：" + e.ToString();
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 编辑角色，点击取消按钮，关闭编辑角色窗口
+        /// </summary>
+        /// <param name="appWin"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public static bool EditRole_ClickCancle(Window appWin, out string msg)
+        {
+            try
+            {
+                var startTime = DateTime.Now;
+
+                //点击编辑按钮
+                Button btnAddRole = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditRole").AndIndex(10));
+                btnAddRole.Click();
+
+                //点击取消按钮
+                Button btnComfirmEditRole = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnCancleEditRole"));
+                btnComfirmEditRole.Click();
+
+                var endTime = DateTime.Now;
+
+                try
+                {
+                    //捕捉编辑角色窗口，如果不能捕捉到，则测试通过
+                    string add_win = appWin.Get<Label>(SearchCriteria.ByText("编辑角色")).ToString();
+
+                    msg = "测试【编辑角色，点击取消按钮，关闭编辑角色窗口】--未通过，用时：" + (endTime - startTime).TotalSeconds;
+                    return false;
+
+                }
+                catch
+                {
+                    msg = "测试【编辑角色，点击取消按钮，关闭编辑角色窗口】--通过，用时：" + (endTime - startTime).TotalSeconds;
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                msg = "测试【编辑角色，点击取消按钮，关闭编辑角色窗口】--失败，原因：" + e.ToString();
+                return false;
+            }
+        }
 
         #endregion
     }
