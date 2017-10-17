@@ -36,7 +36,6 @@ namespace DentWhiteTest.TestCase
                     string error_info = appWin.Get<Label>(SearchCriteria.ByText("查询角色列表异常！")).ToString();
                     msg = "测试【点击角色管理菜单，加载所有角色】--未通过，" + error_info + "用时：" + (endTime - startTime).TotalSeconds;
                     return false;
-
                 }
                 catch
                 {
