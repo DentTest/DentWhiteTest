@@ -41,7 +41,7 @@ namespace DentWhiteTest.Helper
 
                 // 转换为汉字  
                 byte[] bytes = new byte[] { (byte)regionCode_Machine, (byte)positionCode_Machine };
-                chineseWords = gb.GetString(bytes);
+                chineseWords = chineseWords + gb.GetString(bytes);
             }
             return chineseWords;
         }

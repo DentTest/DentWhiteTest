@@ -116,9 +116,9 @@ namespace WhiteFrameDemo.TestCase
                 //Language.Set("en");
                 appWin.Keyboard.PressSpecialKey(TestStack.White.WindowsAPI.KeyboardInput.SpecialKeys.SHIFT);
                 Thread.Sleep(1000);
-                tbUser.Text = "dent_bicheno";
+                tbUser.Text = "test_admin";
                 appWin.Keyboard.PressSpecialKey(TestStack.White.WindowsAPI.KeyboardInput.SpecialKeys.SPACE);
-                tdPwd.Text = "123456789";
+                tdPwd.Text = "hgzz@2017";
                 var endTime = DateTime.Now;
 
                 //点击登录按钮 
