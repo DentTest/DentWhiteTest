@@ -107,7 +107,6 @@ namespace DentWhiteTest.Module
 
             #endregion
 
-
             //关闭客户端
             Global.Win_Docker.Close();
         }

@@ -49,14 +49,14 @@ namespace WhiteFrameDemo.Module
 
             #endregion
 
-            #region 新增角色
+            #region 新增用户
 
             //新增用户，账号名称为空
             res_Launch = UserTest.AddUser_UserNameBull(Global.Win_Docker, out string msg4);
             Global.LstInfo.Add(msg4);
             if (!res_Launch) return;
 
-            //新增用户，账号名称少于2个字符|多于30个字符
+            //新增用户，账号名称少于2个字|多于30个字
             res_Launch = UserTest.AddUser_UserNameLength(Global.Win_Docker, out string msg12);
             Global.LstInfo.Add(msg12);
             if (!res_Launch) return;
@@ -66,7 +66,7 @@ namespace WhiteFrameDemo.Module
             Global.LstInfo.Add(msg5);
             if (!res_Launch) return;
 
-            //新增用户，密码少于8个字符|多于30个字符
+            //新增用户，密码少于8位|多于30位
             res_Launch = UserTest.AddUser_PwdLength(Global.Win_Docker, out string msg10);
             Global.LstInfo.Add(msg10);
             if (!res_Launch) return;
@@ -81,11 +81,10 @@ namespace WhiteFrameDemo.Module
             Global.LstInfo.Add(msg7);
             if (!res_Launch) return;
 
-            //新增用户，真实姓名为空|真实姓名多于30个字符
+            //新增用户，真实姓名为空|真实姓名多于30个字
             res_Launch = UserTest.AddUser_RealNameLength(Global.Win_Docker, out string msg11);
             Global.LstInfo.Add(msg11);
             if (!res_Launch) return;
-
 
             //新增用户成功，同时关闭新增用户窗口
             res_Launch = UserTest.AddUserSucc(Global.Win_Docker, out string msg8);
@@ -95,6 +94,60 @@ namespace WhiteFrameDemo.Module
             //新增用户，点击取消按钮，关闭新增用户窗口
             res_Launch = UserTest.AddUser_ClickCancle(Global.Win_Docker, out string msg9);
             Global.LstInfo.Add(msg9);
+            if (!res_Launch) return;
+
+            #endregion
+
+            #region 编辑角色
+
+            //编辑用户，账号名称为空
+            res_Launch = UserTest.EditUser_UserNameBull(Global.Win_Docker, out string msg13);
+            Global.LstInfo.Add(msg13);
+            if (!res_Launch) return;
+
+            //编辑用户，账号名称少于2个字符|多于30个字符
+            res_Launch = UserTest.EditUser_UserNameLength(Global.Win_Docker, out string msg14);
+            Global.LstInfo.Add(msg14);
+            if (!res_Launch) return;
+
+            //编辑用户，不修改密码
+            res_Launch = UserTest.EditUser_NoEditPwd(Global.Win_Docker, out string msg15);
+            Global.LstInfo.Add(msg15);
+            if (!res_Launch) return;
+
+            //编辑用户，修改密码为少于8位|多于30位
+            res_Launch = UserTest.EditUser_PwdLength(Global.Win_Docker, out string msg16);
+            Global.LstInfo.Add(msg16);
+            if (!res_Launch) return;
+
+            //编辑用户，邮箱地址格式不正确
+            res_Launch = UserTest.EditUser_EmailError(Global.Win_Docker, out string msg17);
+            Global.LstInfo.Add(msg17);
+            if (!res_Launch) return;
+
+            //编辑用户，修改角色为空
+            res_Launch = UserTest.EditUser_EditRole(Global.Win_Docker, out string msg18);
+            Global.LstInfo.Add(msg18);
+            if (!res_Launch) return;
+
+            //编辑用户，真实姓名为空|真实姓名多于30个字符
+            res_Launch = UserTest.EditUser_RealNameLength(Global.Win_Docker, out string msg19);
+            Global.LstInfo.Add(msg19);
+            if (!res_Launch) return;
+
+            //编辑用户成功，同时关闭编辑用户窗口
+            res_Launch = UserTest.EditUserSucc(Global.Win_Docker, out string msg20);
+            Global.LstInfo.Add(msg20);
+            if (!res_Launch) return;
+
+            //编辑用户，无修改操作，点击确定按钮
+            res_Launch = UserTest.EditUser_NoEdit(Global.Win_Docker, out string msg22);
+            Global.LstInfo.Add(msg22);
+            if (!res_Launch) return;
+
+            //编辑用户，点击取消按钮，关闭编辑用户窗口
+            res_Launch = UserTest.EditUser_ClickCancle(Global.Win_Docker, out string msg21);
+            Global.LstInfo.Add(msg21);
             if (!res_Launch) return;
 
             #endregion
