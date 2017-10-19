@@ -152,6 +152,20 @@ namespace WhiteFrameDemo.Module
 
             #endregion
 
+            #region 删除用户
+
+            //点击删除用户按钮，弹出提醒框，选择确定
+            res_Launch = UserTest.Del_UserComfirm(Global.Win_Docker, out string msg23);
+            Global.LstInfo.Add(msg23);
+            if (!res_Launch) return;
+
+            //点击删除用户按钮，弹出提醒框，选择取消
+            res_Launch = UserTest.Del_UserCancle(Global.Win_Docker, out string msg24);
+            Global.LstInfo.Add(msg24);
+            if (!res_Launch) return;
+
+            #endregion
+
             //关闭客户端
             Global.Win_Docker.Close();
         }
