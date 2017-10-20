@@ -62,7 +62,7 @@ namespace DentWhiteTest.TestCase
                 appWin.Keyboard.PressSpecialKey(TestStack.White.WindowsAPI.KeyboardInput.SpecialKeys.SHIFT);
                 Thread.Sleep(1000);
                 txtSearchUser.Text = "admin";
-                appWin.Keyboard.PressSpecialKey(TestStack.White.WindowsAPI.KeyboardInput.SpecialKeys.SPACE);
+                //appWin.Keyboard.PressSpecialKey(TestStack.White.WindowsAPI.KeyboardInput.SpecialKeys.SPACE);
 
 
                 //点击查询按钮
