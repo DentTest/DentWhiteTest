@@ -54,6 +54,51 @@ namespace DentWhiteTest.Module
 
             #endregion
 
+            //新增医院，医院名称为空
+            res_Launch = HospitalTest.AddHospital_NameNull(Global.Win_Docker, out string msg4);
+            Global.LstInfo.Add(msg4);
+            if (!res_Launch) return;
+
+            //新增医院，省份为空
+            res_Launch = HospitalTest.AddHospital_ProvinceNull(Global.Win_Docker, out string msg5);
+            Global.LstInfo.Add(msg5);
+            if (!res_Launch) return;
+
+            //新增医院，市为空
+            res_Launch = HospitalTest.AddHospital_CityNull(Global.Win_Docker, out string msg6);
+            Global.LstInfo.Add(msg6);
+            if (!res_Launch) return;
+
+            //新增医院，区为空
+            res_Launch = HospitalTest.AddHospital_DistrictNull(Global.Win_Docker, out string msg7);
+            Global.LstInfo.Add(msg7);
+            if (!res_Launch) return;
+
+            //新增医院，详细地址为空
+            res_Launch = HospitalTest.AddHospital_DetailNull(Global.Win_Docker, out string msg8);
+            Global.LstInfo.Add(msg8);
+            if (!res_Launch) return;
+
+            //新增医院，上传图片超过5M
+            res_Launch = HospitalTest.AddHospital_uploadBig(Global.Win_Docker, out string msg9);
+            Global.LstInfo.Add(msg9);
+            if (!res_Launch) return;
+
+            //新增医院，增加成功
+            res_Launch = HospitalTest.AddHospital_Succ(Global.Win_Docker, out string msg10);
+            Global.LstInfo.Add(msg10);
+            if (!res_Launch) return;
+
+            //新增医院，点击取消按钮，关闭新增医院窗口
+            res_Launch = HospitalTest.AddHospital_ClickCancle(Global.Win_Docker, out string msg11);
+            Global.LstInfo.Add(msg11);
+            if (!res_Launch) return;
+
+            #region
+
+
+            #endregion
+
 
             //关闭客户端
             Global.Win_Docker.Close();
