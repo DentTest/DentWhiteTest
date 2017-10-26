@@ -14,7 +14,7 @@ namespace DentWhiteTest.Contacts
         public const string DockerId = "docker_window";
         public const string MallId = "mall_window";
 
-        public const string DockerPath = @"C:\Users\heygears\Desktop\排牙师客户端\DentManager.Client.exe";
+        public const string DockerPath = @"C:\Users\heygears\Desktop\德雅管理平台.appref-ms";
         public const string MallPath = @"C:\Users\heygears\Desktop\商城后台管理客户端\MallManager.Client.exe";
     }
 }
