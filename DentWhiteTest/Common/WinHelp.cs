@@ -29,8 +29,10 @@ namespace DentWhiteTest.Common
             {
                 var startTime = DateTime.Now;
                 TestStack.White.Application appTest = TestStack.White.Application.Launch(path);
-                //Thread.Sleep(300);
-                appWin = appTest.GetWindow(SearchCriteria.ByAutomationId(id), InitializeOption.NoCache);
+
+                Thread.Sleep(2000);
+                //如果会打开多个客户端，需要修改获取方式FirstOrDefault为Index，按照客户端的打开顺序来捕捉
+                appWin = TestStack.White.Desktop.Instance.Windows().FirstOrDefault(l => l.Id == id);
                 var endTime = DateTime.Now;
                 msg = "启动"+ name + "客户端--通过，用时：" + (endTime - startTime).TotalSeconds;
 
