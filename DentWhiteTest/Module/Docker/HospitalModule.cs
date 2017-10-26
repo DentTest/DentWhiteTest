@@ -54,6 +54,8 @@ namespace DentWhiteTest.Module
 
             #endregion
 
+            #region 新增医院
+
             //新增医院，医院名称为空
             res_Launch = HospitalTest.AddHospital_NameNull(Global.Win_Docker, out string msg4);
             Global.LstInfo.Add(msg4);
@@ -93,9 +95,55 @@ namespace DentWhiteTest.Module
             res_Launch = HospitalTest.AddHospital_ClickCancle(Global.Win_Docker, out string msg11);
             Global.LstInfo.Add(msg11);
             if (!res_Launch) return;
+            #endregion
 
-            #region
+            #region 编辑医院
+            //编辑医院，名称为空
+            res_Launch = HospitalTest.EditHospital_HospitalNameNull(Global.Win_Docker, out string msg12);
+            Global.LstInfo.Add(msg12);
+            if (!res_Launch) return;
 
+            //编辑医院，修改医院名称
+            res_Launch = HospitalTest.EditHospital_HospitalNameEdit(Global.Win_Docker, out string msg13);
+            Global.LstInfo.Add(msg13);
+            if (!res_Launch) return;
+
+            //编辑医院，修改省市区
+            res_Launch = HospitalTest.EditHospital_Editcity(Global.Win_Docker, out string msg14);
+            Global.LstInfo.Add(msg14);
+            if (!res_Launch) return;
+
+            //编辑医院，修改详细地址
+            res_Launch = HospitalTest.EditHospital_Detail(Global.Win_Docker, out string msg15);
+            Global.LstInfo.Add(msg15);
+            if (!res_Launch) return;
+
+            //编辑医院，修改上传图片超过5M
+            res_Launch = HospitalTest.EditHospital_UploadImageBeyond(Global.Win_Docker, out string msg16);
+            Global.LstInfo.Add(msg16);
+            if (!res_Launch) return;
+
+            //编辑医院，修改上传图片超过5M
+            res_Launch = HospitalTest.EditHospital_UploadImageBeyond2(Global.Win_Docker, out string msg17);
+            Global.LstInfo.Add(msg17);
+            if (!res_Launch) return;
+
+            //编辑医院，修改上传图片
+            res_Launch = HospitalTest.EditHospital_UploadImage(Global.Win_Docker, out string msg18);
+            Global.LstInfo.Add(msg18);
+            if (!res_Launch) return;
+            #endregion
+
+            #region 删除医院
+            //删除医院，删除成功
+            res_Launch = HospitalTest.Del_HospitalComfirm(Global.Win_Docker, out string msg19);
+            Global.LstInfo.Add(msg19);
+            if (!res_Launch) return;
+
+            //删除医院，点击取消
+            res_Launch = HospitalTest.Del_HospitalCancle(Global.Win_Docker, out string msg20);
+            Global.LstInfo.Add(msg20);
+            if (!res_Launch) return;
 
             #endregion
 

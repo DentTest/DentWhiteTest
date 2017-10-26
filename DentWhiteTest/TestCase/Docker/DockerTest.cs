@@ -936,7 +936,7 @@ namespace DentWhiteTest.TestCase
 
         #endregion
 
-        #region  删除用户
+        #region  删除排牙师
 
         /// <summary>
         /// 点击删除排牙师按钮，弹出提醒框，选择确定
