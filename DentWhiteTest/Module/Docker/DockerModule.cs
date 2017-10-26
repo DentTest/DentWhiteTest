@@ -18,7 +18,7 @@ namespace DentWhiteTest.Module
             Global.LstInfo.Add("--- 排牙师管理模块 ---");
 
             //启动一个客户端
-            bool res_Launch = WinHelp.Launch(out Window appWin, out string msg, Const.DockerPath, Const.DockerName, Const.DockerId);
+            bool res_Launch = WinHelp.Launch(out Window appWin, out string msg, Const.DockerPath, Const.DentName, Const.DockerId);
             Global.LstInfo.Add(msg);
             if (res_Launch)
             {

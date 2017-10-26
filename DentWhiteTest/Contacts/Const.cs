@@ -10,6 +10,7 @@ namespace DentWhiteTest.Contacts
     {
         public const string DockerName = "排牙师";
         public const string MallName = "商城后台管理";
+        public const string DentName = "德雅管理平台";
 
         public const string DockerId = "docker_window";
         public const string MallId = "mall_window";

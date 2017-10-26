@@ -14,7 +14,7 @@ namespace WhiteFrameDemo.Module
             #region 登陆成功
 
             //启动一个客户端
-            bool res_Launch = WinHelp.Launch(out Window appWin, out string msg, Const.DockerPath, Const.DockerName, Const.DockerId);
+            bool res_Launch = WinHelp.Launch(out Window appWin, out string msg, Const.DockerPath, Const.DentName, Const.DockerId);
             Global.LstInfo.Add(msg);
             if (res_Launch)
             {
@@ -38,7 +38,7 @@ namespace WhiteFrameDemo.Module
             #region 登陆账号密码为空
 
             //启动一个客户端
-            res_Launch = WinHelp.Launch(out Window appWin1, out string msg2, Const.DockerPath, Const.DockerName, Const.DockerId);
+            res_Launch = WinHelp.Launch(out Window appWin1, out string msg2, Const.DockerPath, Const.DentName, Const.DockerId);
             Global.LstInfo.Add(msg2);
             if (res_Launch)
             {
@@ -62,7 +62,7 @@ namespace WhiteFrameDemo.Module
             #region 登陆账号为空
 
             //启动一个客户端
-            res_Launch = WinHelp.Launch(out Window appWin2, out string msg4, Const.DockerPath, Const.DockerName, Const.DockerId);
+            res_Launch = WinHelp.Launch(out Window appWin2, out string msg4, Const.DockerPath, Const.DentName, Const.DockerId);
             Global.LstInfo.Add(msg4);
             if (res_Launch)
             {
@@ -86,7 +86,7 @@ namespace WhiteFrameDemo.Module
             #region 登陆密码为空
 
             //启动一个客户端
-            res_Launch = WinHelp.Launch(out Window appWin3, out string msg6, Const.DockerPath, Const.DockerName, Const.DockerId);
+            res_Launch = WinHelp.Launch(out Window appWin3, out string msg6, Const.DockerPath, Const.DentName, Const.DockerId);
             Global.LstInfo.Add(msg6);
             if (res_Launch)
             {

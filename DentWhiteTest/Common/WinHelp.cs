@@ -7,6 +7,7 @@ using TestStack.White.UIItems;
 using TestStack.White.Factory;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.UIItems.WindowItems;
+using System.Threading;
 
 namespace DentWhiteTest.Common
 {
@@ -28,23 +29,12 @@ namespace DentWhiteTest.Common
             {
                 var startTime = DateTime.Now;
                 TestStack.White.Application appTest = TestStack.White.Application.Launch(path);
+                //Thread.Sleep(300);
                 appWin = appTest.GetWindow(SearchCriteria.ByAutomationId(id), InitializeOption.NoCache);
                 var endTime = DateTime.Now;
                 msg = "启动"+ name + "客户端--通过，用时：" + (endTime - startTime).TotalSeconds;
 
-                ////如果有版本更新提醒，则先关闭
-                //try
-                //{
-                //    Button btnCloseReleaseNote = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnCloseReleaseNote"));
-                //    if (btnCloseReleaseNote != null)
-                //    {
-                //        btnCloseReleaseNote.Click();
-                //    }
-                //}
-                //catch
-                //{
-
-                //}
+                //模拟关闭鼠标单击任意点，关闭更新提醒
 
                 return true;
             }
