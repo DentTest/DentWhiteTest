@@ -111,73 +111,73 @@ namespace DentWhiteTest.Module
             #endregion
 
             #region 编辑医生
-            //编辑医生，账号名为空
-            res_Launch = DoctorTest.EditDoctor_DoctorNameNull(Global.Win_Docker, out string msg15);
-            Global.LstInfo.Add(msg15);
-            if (!res_Launch) return;
+            ////编辑医生，账号名为空
+            //res_Launch = DoctorTest.EditDoctor_DoctorNameNull(Global.Win_Docker, out string msg15);
+            //Global.LstInfo.Add(msg15);
+            //if (!res_Launch) return;
 
-            //编辑医生，账号名称少于2个字|多于30个字
-            res_Launch = DoctorTest.EditDoctor_DoctorNameLength(Global.Win_Docker, out string msg16);
-            Global.LstInfo.Add(msg16);
-            if (!res_Launch) return;
+            ////编辑医生，账号名称少于2个字|多于30个字
+            //res_Launch = DoctorTest.EditDoctor_DoctorNameLength(Global.Win_Docker, out string msg16);
+            //Global.LstInfo.Add(msg16);
+            //if (!res_Launch) return;
 
-            //编辑医生，不修改密码
-            res_Launch = DoctorTest.EditDoctor_NoEditPwd(Global.Win_Docker, out string msg17);
-            Global.LstInfo.Add(msg17);
-            if (!res_Launch) return;
+            ////编辑医生，不修改密码
+            //res_Launch = DoctorTest.EditDoctor_NoEditPwd(Global.Win_Docker, out string msg17);
+            //Global.LstInfo.Add(msg17);
+            //if (!res_Launch) return;
 
-            //编辑医生，修改密码为少于8位|多于30位
-            res_Launch = DoctorTest.EditDoctor_PwdLength(Global.Win_Docker, out string msg18);
-            Global.LstInfo.Add(msg18);
-            if (!res_Launch) return;
+            ////编辑医生，修改密码为少于8位|多于30位
+            //res_Launch = DoctorTest.EditDoctor_PwdLength(Global.Win_Docker, out string msg18);
+            //Global.LstInfo.Add(msg18);
+            //if (!res_Launch) return;
 
-            //编辑医生，邮箱地址格式不正确
-            res_Launch = DoctorTest.EditDoctor_EmailError(Global.Win_Docker, out string msg19);
-            Global.LstInfo.Add(msg19);
-            if (!res_Launch) return;
+            ////编辑医生，邮箱地址格式不正确
+            //res_Launch = DoctorTest.EditDoctor_EmailError(Global.Win_Docker, out string msg19);
+            //Global.LstInfo.Add(msg19);
+            //if (!res_Launch) return;
 
-            //编辑医生，真实姓名为空|真实姓名多于30个字
-            res_Launch = DoctorTest.EditDoctor_RealNameLength(Global.Win_Docker, out string msg20);
-            Global.LstInfo.Add(msg20);
-            if (!res_Launch) return;
+            ////编辑医生，真实姓名为空|真实姓名多于30个字
+            //res_Launch = DoctorTest.EditDoctor_RealNameLength(Global.Win_Docker, out string msg20);
+            //Global.LstInfo.Add(msg20);
+            //if (!res_Launch) return;
 
-            //编辑医生，修改所在医院
-            res_Launch = DoctorTest.EditDoctor_EditHospital(Global.Win_Docker, out string msg21);
-            Global.LstInfo.Add(msg21);
-            if (!res_Launch) return;
+            ////编辑医生，修改所在医院
+            //res_Launch = DoctorTest.EditDoctor_EditHospital(Global.Win_Docker, out string msg21);
+            //Global.LstInfo.Add(msg21);
+            //if (!res_Launch) return;
 
-            //编辑医生，修改市场负责人
-            res_Launch = DoctorTest.EditDoctor_Marker(Global.Win_Docker, out string msg22);
-            Global.LstInfo.Add(msg22);
-            if (!res_Launch) return;
+            ////编辑医生，修改市场负责人
+            //res_Launch = DoctorTest.EditDoctor_Marker(Global.Win_Docker, out string msg22);
+            //Global.LstInfo.Add(msg22);
+            //if (!res_Launch) return;
 
-            //编辑医生成功，同时关闭编辑医生窗口
-            res_Launch = DoctorTest.EditDoctorSucc(Global.Win_Docker, out string msg23);
-            Global.LstInfo.Add(msg23);
-            if (!res_Launch) return;
+            ////编辑医生成功，同时关闭编辑医生窗口
+            //res_Launch = DoctorTest.EditDoctorSucc(Global.Win_Docker, out string msg23);
+            //Global.LstInfo.Add(msg23);
+            //if (!res_Launch) return;
 
-            //编辑医生，无修改操作，点击确定按钮
-            res_Launch = DoctorTest.EditDoctor_NoEdit(Global.Win_Docker, out string msg24);
-            Global.LstInfo.Add(msg24);
-            if (!res_Launch) return;
+            ////编辑医生，无修改操作，点击确定按钮
+            //res_Launch = DoctorTest.EditDoctor_NoEdit(Global.Win_Docker, out string msg24);
+            //Global.LstInfo.Add(msg24);
+            //if (!res_Launch) return;
 
-            //编辑医生，点击取消按钮，关闭编辑医生窗口
-            res_Launch = DoctorTest.EditDoctor_ClickCancle(Global.Win_Docker, out string msg25);
-            Global.LstInfo.Add(msg25);
-            if (!res_Launch) return;
+            ////编辑医生，点击取消按钮，关闭编辑医生窗口
+            //res_Launch = DoctorTest.EditDoctor_ClickCancle(Global.Win_Docker, out string msg25);
+            //Global.LstInfo.Add(msg25);
+            //if (!res_Launch) return;
 
             #endregion
 
             #region 删除医生
-            //点击删除医生按钮，弹出提醒框，选择确定
-            res_Launch = DoctorTest.Del_DoctorComfirm(Global.Win_Docker, out string msg26);
-            Global.LstInfo.Add(msg26);
-            if (!res_Launch) return;
+            ////点击删除医生按钮，弹出提醒框，选择确定
+            //res_Launch = DoctorTest.Del_DoctorComfirm(Global.Win_Docker, out string msg26);
+            //Global.LstInfo.Add(msg26);
+            //if (!res_Launch) return;
 
-            //点击删除医生按钮，弹出提醒框，选择取消
-            res_Launch = DoctorTest.Del_DoctorCancle(Global.Win_Docker, out string msg27);
-            Global.LstInfo.Add(msg27);
-            if (!res_Launch) return;
+            ////点击删除医生按钮，弹出提醒框，选择取消
+            //res_Launch = DoctorTest.Del_DoctorCancle(Global.Win_Docker, out string msg27);
+            //Global.LstInfo.Add(msg27);
+            //if (!res_Launch) return;
             #endregion
 
 
