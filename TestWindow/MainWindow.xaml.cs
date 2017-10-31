@@ -37,7 +37,7 @@ namespace WhiteWindow
             DoctorModule.DoctorAllTest();
             DockerModule.DockerAllTest();
             RoleModule.RoleAllTest();
-            UserModule.UserAllTest();
+            DoctorModule.DoctorAllTest();
             isRunning = false;
 
             this.Activate();
@@ -166,7 +166,7 @@ namespace WhiteWindow
             }
          
             isRunning = true;
-            UserModule.UserAllTest();
+            DoctorModule.DoctorAllTest();
             isRunning = false;
 
             this.Activate();

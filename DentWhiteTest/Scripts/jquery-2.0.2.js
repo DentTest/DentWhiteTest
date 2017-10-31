@@ -1219,7 +1219,7 @@ function addHandle( attrs, handler, test ) {
 		setHandle = test ? null : handler;
 
 	while ( i-- ) {
-		// Don't override a user's handler
+		// Don't override a Doctor's handler
 		if ( !(current = Expr.attrHandle[ attrs[i] ]) || current === handler ) {
 			Expr.attrHandle[ attrs[i] ] = setHandle;
 		}
@@ -1855,7 +1855,7 @@ getText = Sizzle.getText = function( elem ) {
 
 Expr = Sizzle.selectors = {
 
-	// Can be adjusted by the user
+	// Can be adjusted by the Doctor
 	cacheLength: 50,
 
 	createPseudo: markFunction,
@@ -2091,7 +2091,7 @@ Expr = Sizzle.selectors = {
 				fn = Expr.pseudos[ pseudo ] || Expr.setFilters[ pseudo.toLowerCase() ] ||
 					Sizzle.error( "unsupported pseudo: " + pseudo );
 
-			// The user may use createPseudo to indicate that
+			// The Doctor may use createPseudo to indicate that
 			// arguments are needed to create the filter function
 			// just as Sizzle does
 			if ( fn[ expando ] ) {
@@ -3326,12 +3326,12 @@ jQuery.support = (function( support ) {
 	1. Enforce API surface and semantic compatibility with 1.9.x branch
 	2. Improve the module's maintainability by reducing the storage
 		paths to a single mechanism.
-	3. Use the same single mechanism to support "private" and "user" data.
-	4. _Never_ expose "private" data to user code (TODO: Drop _data, _removeData)
-	5. Avoid exposing implementation details on user objects (eg. expando properties)
+	3. Use the same single mechanism to support "private" and "Doctor" data.
+	4. _Never_ expose "private" data to Doctor code (TODO: Drop _data, _removeData)
+	5. Avoid exposing implementation details on Doctor objects (eg. expando properties)
 	6. Provide a clear path for implementation upgrade to WeakMap in 2014
 */
-var data_user, data_priv,
+var data_Doctor, data_priv,
 	rbrace = /(?:\{[\s\S]*\}|\[[\s\S]*\])$/,
 	rmultiDash = /([A-Z])/g;
 
@@ -3514,7 +3514,7 @@ Data.prototype = {
 };
 
 // These may be used throughout the jQuery core codebase
-data_user = new Data();
+data_Doctor = new Data();
 data_priv = new Data();
 
 
@@ -3522,15 +3522,15 @@ jQuery.extend({
 	acceptData: Data.accepts,
 
 	hasData: function( elem ) {
-		return data_user.hasData( elem ) || data_priv.hasData( elem );
+		return data_Doctor.hasData( elem ) || data_priv.hasData( elem );
 	},
 
 	data: function( elem, name, data ) {
-		return data_user.access( elem, name, data );
+		return data_Doctor.access( elem, name, data );
 	},
 
 	removeData: function( elem, name ) {
-		data_user.remove( elem, name );
+		data_Doctor.remove( elem, name );
 	},
 
 	// TODO: Now that all calls to _data and _removeData have been replaced
@@ -3554,7 +3554,7 @@ jQuery.fn.extend({
 		// Gets all values
 		if ( key === undefined ) {
 			if ( this.length ) {
-				data = data_user.get( elem );
+				data = data_Doctor.get( elem );
 
 				if ( elem.nodeType === 1 && !data_priv.get( elem, "hasDataAttrs" ) ) {
 					attrs = elem.attributes;
@@ -3576,7 +3576,7 @@ jQuery.fn.extend({
 		// Sets multiple values
 		if ( typeof key === "object" ) {
 			return this.each(function() {
-				data_user.set( this, key );
+				data_Doctor.set( this, key );
 			});
 		}
 
@@ -3592,14 +3592,14 @@ jQuery.fn.extend({
 			if ( elem && value === undefined ) {
 				// Attempt to get data from the cache
 				// with the key as-is
-				data = data_user.get( elem, key );
+				data = data_Doctor.get( elem, key );
 				if ( data !== undefined ) {
 					return data;
 				}
 
 				// Attempt to get data from the cache
 				// with the key camelized
-				data = data_user.get( elem, camelKey );
+				data = data_Doctor.get( elem, camelKey );
 				if ( data !== undefined ) {
 					return data;
 				}
@@ -3619,18 +3619,18 @@ jQuery.fn.extend({
 			this.each(function() {
 				// First, attempt to store a copy or reference of any
 				// data that might've been store with a camelCased key.
-				var data = data_user.get( this, camelKey );
+				var data = data_Doctor.get( this, camelKey );
 
 				// For HTML5 data-* attribute interop, we have to
 				// store property names with dashes in a camelCase form.
 				// This might not apply to all properties...*
-				data_user.set( this, camelKey, value );
+				data_Doctor.set( this, camelKey, value );
 
 				// *... In the case of properties that might _actually_
 				// have dashes, we need to also store a copy of that
 				// unchanged property.
 				if ( key.indexOf("-") !== -1 && data !== undefined ) {
-					data_user.set( this, key, value );
+					data_Doctor.set( this, key, value );
 				}
 			});
 		}, null, value, arguments.length > 1, null, true );
@@ -3638,7 +3638,7 @@ jQuery.fn.extend({
 
 	removeData: function( key ) {
 		return this.each(function() {
-			data_user.remove( this, key );
+			data_Doctor.remove( this, key );
 		});
 	}
 });
@@ -3664,7 +3664,7 @@ function dataAttr( elem, key, data ) {
 			} catch( e ) {}
 
 			// Make sure we set the data so it isn't changed later
-			data_user.set( elem, key, data );
+			data_Doctor.set( elem, key, data );
 		} else {
 			data = undefined;
 		}
@@ -5887,8 +5887,8 @@ jQuery.extend({
 					}
 				}
 			}
-			// Discard any remaining `user` data
-			delete data_user.cache[ elem[ data_user.expando ] ];
+			// Discard any remaining `Doctor` data
+			delete data_Doctor.cache[ elem[ data_Doctor.expando ] ];
 		}
 	},
 
@@ -5969,12 +5969,12 @@ function cloneCopyEvent( src, dest ) {
 		}
 	}
 
-	// 2. Copy user data
-	if ( data_user.hasData( src ) ) {
-		udataOld = data_user.access( src );
+	// 2. Copy Doctor data
+	if ( data_Doctor.hasData( src ) ) {
+		udataOld = data_Doctor.access( src );
 		udataCur = jQuery.extend( {}, udataOld );
 
-		data_user.set( dest, udataCur );
+		data_Doctor.set( dest, udataCur );
 	}
 }
 
@@ -6979,7 +6979,7 @@ jQuery.extend({
 		timeout: 0,
 		data: null,
 		dataType: null,
-		username: null,
+		Doctorname: null,
 		password: null,
 		cache: null,
 		throws: false,
@@ -7794,7 +7794,7 @@ jQuery.ajaxTransport(function( options ) {
 			send: function( headers, complete ) {
 				var i, id,
 					xhr = options.xhr();
-				xhr.open( options.type, options.url, options.async, options.username, options.password );
+				xhr.open( options.type, options.url, options.async, options.Doctorname, options.password );
 				// Apply custom fields if provided
 				if ( options.xhrFields ) {
 					for ( i in options.xhrFields ) {
@@ -8817,7 +8817,7 @@ jQuery.fn.andSelf = jQuery.fn.addBack;
 if ( typeof module === "object" && module && typeof module.exports === "object" ) {
 	// Expose jQuery as module.exports in loaders that implement the Node
 	// module pattern (including browserify). Do not create the global, since
-	// the user will be storing it themselves locally, and globals are frowned
+	// the Doctor will be storing it themselves locally, and globals are frowned
 	// upon in the Node module world.
 	module.exports = jQuery;
 } else {
