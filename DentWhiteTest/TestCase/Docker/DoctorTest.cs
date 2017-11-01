@@ -204,6 +204,10 @@ namespace DentWhiteTest.TestCase
                 TextBox txtDoctorName = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
                 txtDoctorName.BulkText = "";
 
+                //选择不区分的医生
+                ComboBox cbIsOnline = appWin.Get<ComboBox>(SearchCriteria.ByAutomationId("cbIsOnline"));
+                cbIsOnline.Select(0);
+
                 //点击查询
                 Button btnSearchOrderList = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnSearchOrderList"));
                 btnSearchOrderList.Click();
@@ -365,16 +369,16 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击新增按钮
-                Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
-                btnAddDoctor.Click();
+                //Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
+                //btnAddDoctor.Click();
 
                 //正确账号名称
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
                 txtDoctorName.BulkText = Generate.GenerateChineseWords(3);
 
                 //密码为空
-                TextBox pwdDcotorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDcotorPwd"));
-                pwdDcotorPwd.Text = "";
+                TextBox pwdDoctorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDoctorPwd"));
+                pwdDoctorPwd.Text = "";
 
                 //点击确定按钮
                 Button btnComfirmAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmAddDoctor"));
@@ -419,8 +423,8 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击新增按钮
-                Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
-                btnAddDoctor.Click();
+                //Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
+                //btnAddDoctor.Click();
 
                 //账号名称不为空
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
@@ -492,8 +496,8 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击新增按钮
-                Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
-                btnAddDoctor.Click();
+                //Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
+                //btnAddDoctor.Click();
 
                 //账号名不为空
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
@@ -550,8 +554,8 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击新增按钮
-                Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
-                btnAddDoctor.Click();
+                //Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
+                //btnAddDoctor.Click();
 
                 //正确账号名称
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
@@ -627,16 +631,16 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击新增按钮
-                Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
-                btnAddDoctor.Click();
+                //Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
+                //btnAddDoctor.Click();
 
                 //账号名称不为空
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
                 txtDoctorName.BulkText = Generate.GenerateChineseWords(3);
 
                 //密码不少于8个字符
-                TextBox pwdDcotorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDcotorPwd"));
-                pwdDcotorPwd.Text = "12345678";
+                TextBox pwdDoctorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDoctorPwd"));
+                pwdDoctorPwd.Text = "12345678";
 
                 //账号名称不为空
                 TextBox txtRealName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRealName"));
@@ -702,24 +706,24 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击新增按钮
-                Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
-                btnAddDoctor.Click();
+                //Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
+                //btnAddDoctor.Click();
 
                 //账号名称不为空
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
                 txtDoctorName.BulkText = Generate.GenerateChineseWords(3);
 
                 //密码不少于8个字符
-                TextBox pwdUserPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdUserPwd"));
-                pwdUserPwd.Text = "12345678";
+                TextBox pwdDoctorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDoctorPwd"));
+                pwdDoctorPwd.Text = "12345678";
 
                 //邮箱地址为空
-                TextBox txtEmail = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtEmail"));
-                txtEmail.Text = "";
+                //TextBox txtEmail = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtEmail"));
+                //txtEmail.Text = "";
 
                 //选择医院
-                ComboBox cbHospital = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbHospital "));
-                cbHospital.Select(1);
+                ComboBox cbHospital = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbHospital"));
+                cbHospital.Select(3);
 
                 //点击确定按钮
                 Button btnComfirmAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmAddDoctor"));
@@ -763,8 +767,8 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击新增按钮
-                Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
-                btnAddDoctor.Click();
+                //Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddDoctor"));
+                //btnAddDoctor.Click();
 
                 //账号名称不为空
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
@@ -791,20 +795,20 @@ namespace DentWhiteTest.TestCase
                 cbHospital.Select(1);
 
                 //职务不为空
-                TextBox txtDuty = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDuty"));
-                txtDuty.BulkText = Generate.GenerateChineseWords(3);
+                TextBox txtPosition = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtPosition"));
+                txtPosition.BulkText = Generate.GenerateChineseWords(3);
 
                 //手机不为空
-                TextBox txtTel = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtTel"));
-                txtTel.Text = "13422222222";
+                TextBox txtPhone = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtPhone"));
+                txtPhone.Text = "13422222222";
 
                 //专业不为空
-                TextBox txtMain = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMain"));
-                txtMain.BulkText = Generate.GenerateChineseWords(3);
+                TextBox txtMajor = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMajor"));
+                txtMajor.BulkText = Generate.GenerateChineseWords(3);
 
                 //市场负责人不为空
-                TextBox txtMarker = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMarker"));
-                txtMarker.BulkText = Generate.GenerateChineseWords(3);
+                TextBox txtMarketAdmin = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMarketAdmin"));
+                txtMarketAdmin.BulkText = Generate.GenerateChineseWords(3);
 
                 //选择状态
                 ComboBox cbStauts = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbStauts"));
@@ -906,7 +910,7 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(10));
+                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(2));
                 btnEditDoctor.Click();
 
                 //账号名称为空
@@ -920,7 +924,7 @@ namespace DentWhiteTest.TestCase
                 try
                 {
                     //捕捉提醒信息，如果能捕捉到，则测试通过
-                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("请输入账号！")).ToString();
+                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("请输入账号名！")).ToString();
                     //关闭提醒框
                     Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
                     btnTips.Click();
@@ -965,7 +969,7 @@ namespace DentWhiteTest.TestCase
                 try
                 {
                     //捕捉提醒信息，如果能捕捉到，则测试通过
-                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名称最少2个字，最多30个字！")).ToString();
+                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名最少2个字，最多30个字！")).ToString();
                     //关闭提醒框
                     Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
                     btnTips.Click();
@@ -979,7 +983,7 @@ namespace DentWhiteTest.TestCase
                     try
                     {
                         //捕捉提醒信息，如果能捕捉到，则测试通过
-                        error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名称最少2个字，最多30个字！")).ToString();
+                        error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名最少2个字，最多30个字！")).ToString();
                         //关闭提醒框
                         btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
                         btnTips.Click();
@@ -1023,7 +1027,7 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(10));
+                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(2));
                 btnEditDoctor.Click();
 
                 //点击确定按钮
@@ -1068,7 +1072,7 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(10));
+                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(2));
                 btnEditDoctor.Click();
 
                 //密码少于8个字符
@@ -1140,7 +1144,7 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(10));
+                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(2));
                 btnEditDoctor.Click();
 
                 //邮箱地址格式不正确
@@ -1195,7 +1199,7 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(10));
+                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(2));
                 btnEditDoctor.Click();
 
                 //真实姓名为空
@@ -1267,7 +1271,7 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(10));
+                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(2));
                 btnEditDoctor.Click();
 
                 //修改所在医院
@@ -1288,19 +1292,19 @@ namespace DentWhiteTest.TestCase
                     Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
                     btnTips.Click();
 
-                    msg = "测试【编辑医生，修改角色】--通过，用时：" + (endTime - startTime).TotalSeconds;
+                    msg = "测试【编辑医生，修改所在医院】--通过，用时：" + (endTime - startTime).TotalSeconds;
                     return true;
 
                 }
                 catch
                 {
-                    msg = "测试【编辑医生，修改角色】--未通过，用时：" + (endTime - startTime).TotalSeconds;
+                    msg = "测试【编辑医生，修改所在医院】--未通过，用时：" + (endTime - startTime).TotalSeconds;
                     return false;
                 }
             }
             catch (Exception e)
             {
-                msg = "测试【编辑医生，角色为空】--失败，原因：" + e.ToString();
+                msg = "测试【编辑医生，所在医院为空】--失败，原因：" + e.ToString();
                 return false;
             }
         }
@@ -1318,12 +1322,12 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(10));
+                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(2));
                 btnEditDoctor.Click();
 
                 //修改市场负责人
-                TextBox txtMatker = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMatker"));
-                txtMatker.BulkText = Generate.GenerateChineseWords(3);
+                TextBox txtMarketAdmin = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMarketAdmin"));
+                txtMarketAdmin.BulkText = Generate.GenerateChineseWords(3);
 
                 //点击确定按钮
                 Button btnComfirmEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmEditDoctor"));
@@ -1377,7 +1381,7 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(10));
+                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(2));
                 btnEditDoctor.Click();
 
                 //账号名称不为空
@@ -1400,25 +1404,26 @@ namespace DentWhiteTest.TestCase
                 TextBox txtIDCard = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtIDCard"));
                 txtIDCard.Text = "440444199605043242";
 
-                //选择角色
-                ComboBox cbRole = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbRole"));
-                cbRole.Select(1);
+                //选择医院
+                //修改所在医院
+                ComboBox cbHospital = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbHospital"));
+                cbHospital.Select(3);
 
                 //职务不为空
-                TextBox txtDuty = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDuty"));
-                txtDuty.BulkText = Generate.GenerateChineseWords(3);
+                TextBox txtPosition = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtPosition"));
+                txtPosition.BulkText = Generate.GenerateChineseWords(3);
 
                 //手机不为空
-                TextBox txtTel = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtTel"));
-                txtTel.Text = "13422222222";
+                TextBox txtPhone = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtPhone"));
+                txtPhone.Text = "13422222222";
 
                 //专业不为空
-                TextBox txtMain = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMain"));
-                txtMain.BulkText = Generate.GenerateChineseWords(3);
+                TextBox txtMajor = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMajor"));
+                txtMajor.BulkText = Generate.GenerateChineseWords(3);
 
                 //市场负责人不为空
-                TextBox txtMarker = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMarker"));
-                txtMarker.BulkText = Generate.GenerateChineseWords(3);
+                TextBox txtMarketAdmin = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMarketAdmin"));
+                txtMarketAdmin.BulkText = Generate.GenerateChineseWords(3);
 
                 //选择状态
                 ComboBox cbStauts = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbStauts"));
@@ -1476,8 +1481,8 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnAddDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(10));
-                btnAddDoctor.Click();
+                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(2));
+                btnEditDoctor.Click();
 
                 //点击确定按钮
                 Button btnComfirmEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmEditDoctor"));
@@ -1524,7 +1529,7 @@ namespace DentWhiteTest.TestCase
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(10));
+                Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(2));
                 btnEditDoctor.Click();
 
                 //点击取消按钮
@@ -1568,7 +1573,7 @@ namespace DentWhiteTest.TestCase
                 int i = num.Next(10, 25);//产生10到25的随机数
 
                 //点击删除按钮
-                Button btnDelDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnDelDoctor").AndIndex(0));
+                Button btnDelDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnDelDoctor").AndIndex(2));
                 btnDelDoctor.Click();
 
                 try
