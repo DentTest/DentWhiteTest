@@ -36,7 +36,8 @@ namespace DentWhiteTest.Common
                 var endTime = DateTime.Now;
                 msg = "启动"+ name + "客户端--通过，用时：" + (endTime - startTime).TotalSeconds;
 
-                //模拟关闭鼠标单击任意点，关闭更新提醒
+                //模拟鼠标单击任意点，关闭更新提醒
+                
 
                 return true;
             }

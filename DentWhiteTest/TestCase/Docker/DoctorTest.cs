@@ -291,7 +291,7 @@ namespace DentWhiteTest.TestCase
         }
 
         /// <summary>
-        /// 新增医生，账号名称少于2个字|多于30个字
+        /// 新增医生，账号名称最少5个字|多于30个字
         /// </summary>
         /// <param name="appWin"></param>
         /// <param name="msg"></param>
@@ -314,7 +314,7 @@ namespace DentWhiteTest.TestCase
                 try
                 {
                     //捕捉提醒信息，如果能捕捉到，则测试通过
-                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名最少2个字，最多30个字！")).ToString();
+                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名最少5个字，最多30个字！")).ToString();
                     //关闭提醒框
                     Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
                     btnTips.Click();
@@ -328,29 +328,29 @@ namespace DentWhiteTest.TestCase
                     try
                     {
                         //捕捉提醒信息，如果能捕捉到，则测试通过
-                        error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名最少2个字，最多30个字！")).ToString();
+                        error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名最少5个字，最多30个字！")).ToString();
                         //关闭提醒框
                         btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
                         btnTips.Click();
 
-                        msg = "测试【新增医生，账号名称少于2个字|多于30个字】--通过，用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        msg = "测试【新增医生，账号名称最少5个字|多于30个字】--通过，用时：" + (DateTime.Now - startTime).TotalSeconds;
                         return true;
                     }
                     catch
                     {
-                        msg = "测试【新增医生，账号名称少于2个字|多于30个字】--未通过，缺少账号名称长度验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        msg = "测试【新增医生，账号名称最少5个字|多于30个字】--未通过，缺少账号名称长度验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
                         return false;
                     }
                 }
                 catch
                 {
-                    msg = "测试【新增医生，账号名称少于2个字|多于30个字】--未通过，缺少账号名称长度验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
+                    msg = "测试【新增医生，账号名称最少5个字|多于30个字】--未通过，缺少账号名称长度验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
                     return false;
                 }
             }
             catch (Exception e)
             {
-                msg = "测试【新增医生，账号名称少于2个字|多于30个字】--失败，原因：" + e.ToString();
+                msg = "测试【新增医生，账号名称最少5个字|多于30个字】--失败，原因：" + e.ToString();
                 return false;
             }
         }
@@ -374,7 +374,7 @@ namespace DentWhiteTest.TestCase
 
                 //正确账号名称
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
-                txtDoctorName.BulkText = Generate.GenerateChineseWords(3);
+                txtDoctorName.BulkText = Generate.GenerateChineseWords(5);
 
                 //密码为空
                 TextBox pwdDoctorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDoctorPwd"));
@@ -428,7 +428,7 @@ namespace DentWhiteTest.TestCase
 
                 //账号名称不为空
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
-                txtDoctorName.BulkText = Generate.GenerateChineseWords(3);
+                txtDoctorName.BulkText = Generate.GenerateChineseWords(5);
 
                 //密码少于8位
                 TextBox pwdDoctorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDoctorPwd"));
@@ -501,7 +501,7 @@ namespace DentWhiteTest.TestCase
 
                 //账号名不为空
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
-                txtDoctorName.BulkText = Generate.GenerateChineseWords(3);
+                txtDoctorName.BulkText = Generate.GenerateChineseWords(5);
 
                 //密码不少于8个字符
                 TextBox pwdDoctorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDoctorPwd"));
@@ -559,7 +559,7 @@ namespace DentWhiteTest.TestCase
 
                 //正确账号名称
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
-                txtDoctorName.BulkText = Generate.GenerateChineseWords(3);
+                txtDoctorName.BulkText = Generate.GenerateChineseWords(5);
 
                 //密码不少于8个字符
                 TextBox pwdDoctorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDoctorPwd"));
@@ -636,7 +636,7 @@ namespace DentWhiteTest.TestCase
 
                 //账号名称不为空
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
-                txtDoctorName.BulkText = Generate.GenerateChineseWords(3);
+                txtDoctorName.BulkText = Generate.GenerateChineseWords(5);
 
                 //密码不少于8个字符
                 TextBox pwdDoctorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDoctorPwd"));
@@ -644,7 +644,7 @@ namespace DentWhiteTest.TestCase
 
                 //账号名称不为空
                 TextBox txtRealName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRealName"));
-                txtRealName.BulkText = Generate.GenerateChineseWords(3);
+                txtRealName.BulkText = Generate.GenerateChineseWords(5);
 
                 //此处未选择角色，即角色为空
                 //ComboBox cbRole = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbRole"));
@@ -711,7 +711,7 @@ namespace DentWhiteTest.TestCase
 
                 //账号名称不为空
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
-                txtDoctorName.BulkText = Generate.GenerateChineseWords(3);
+                txtDoctorName.BulkText = Generate.GenerateChineseWords(5);
 
                 //密码不少于8个字符
                 TextBox pwdDoctorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDoctorPwd"));
@@ -772,7 +772,7 @@ namespace DentWhiteTest.TestCase
 
                 //账号名称不为空
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
-                txtDoctorName.BulkText = Generate.GenerateChineseWords(3);
+                txtDoctorName.BulkText = Generate.GenerateChineseWords(5);
 
                 //密码不少于8个字符
                 TextBox pwdDoctorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDoctorPwd"));
@@ -947,7 +947,7 @@ namespace DentWhiteTest.TestCase
         }
 
         /// <summary>
-        /// 编辑医生，账号名称少于2个字|多于30个字
+        /// 编辑医生，账号名称最少5个字|多于30个字
         /// </summary>
         /// <param name="appWin"></param>
         /// <param name="msg"></param>
@@ -969,7 +969,7 @@ namespace DentWhiteTest.TestCase
                 try
                 {
                     //捕捉提醒信息，如果能捕捉到，则测试通过
-                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名最少2个字，最多30个字！")).ToString();
+                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名最少5个字，最多30个字！")).ToString();
                     //关闭提醒框
                     Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
                     btnTips.Click();
@@ -983,7 +983,7 @@ namespace DentWhiteTest.TestCase
                     try
                     {
                         //捕捉提醒信息，如果能捕捉到，则测试通过
-                        error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名最少2个字，最多30个字！")).ToString();
+                        error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名最少5个字，最多30个字！")).ToString();
                         //关闭提醒框
                         btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
                         btnTips.Click();
@@ -992,24 +992,24 @@ namespace DentWhiteTest.TestCase
                         Button btnCancleEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnCancleEditDoctor"));
                         btnCancleEditDoctor.Click();
 
-                        msg = "测试【编辑医生，账号名称少于2个字|多于30个字】--通过，用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        msg = "测试【编辑医生，账号名称最少5个字|多于30个字】--通过，用时：" + (DateTime.Now - startTime).TotalSeconds;
                         return true;
                     }
                     catch
                     {
-                        msg = "测试【编辑医生，账号名称少于2个字|多于30个字】--未通过，缺少账号名称长度验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        msg = "测试【编辑医生，账号名称最少5个字|多于30个字】--未通过，缺少账号名称长度验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
                         return false;
                     }
                 }
                 catch
                 {
-                    msg = "测试【编辑医生，账号名称少于2个字|多于30个字】--未通过，缺少账号名称长度验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
+                    msg = "测试【编辑医生，账号名称最少5个字|多于30个字】--未通过，缺少账号名称长度验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
                     return false;
                 }
             }
             catch (Exception e)
             {
-                msg = "测试【编辑医生，账号名称少于2个字|多于30个字】--失败，原因：" + e.ToString();
+                msg = "测试【编辑医生，账号名称最少5个字|多于30个字】--失败，原因：" + e.ToString();
                 return false;
             }
         }
@@ -1386,7 +1386,7 @@ namespace DentWhiteTest.TestCase
 
                 //账号名称不为空
                 TextBox txtDoctorName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtDoctorName"));
-                txtDoctorName.BulkText = Generate.GenerateChineseWords(3);
+                txtDoctorName.BulkText = Generate.GenerateChineseWords(5);
 
                 //密码不少于8个字符
                 TextBox pwdDoctorPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdDoctorPwd"));
@@ -1629,7 +1629,7 @@ namespace DentWhiteTest.TestCase
                 int i = num.Next(10, 25);//产生10到25的随机数
 
                 //点击删除按钮
-                Button btnDelDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnDelDoctor").AndIndex(i));
+                Button btnDelDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnDelDoctor").AndIndex(2));
                 btnDelDoctor.Click();
 
                 try

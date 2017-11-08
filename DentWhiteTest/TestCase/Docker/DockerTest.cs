@@ -12,21 +12,21 @@ using System;
 
 namespace DentWhiteTest.TestCase
 {
-    public class DockerTest
+    public class DentureTest
     {
         #region 排牙师列表
 
         /// <summary>
         /// 点击排牙师管理菜单，加载所有排牙师
         /// </summary>
-        public static bool Load_DockerList(Window appWin, out string msg)
+        public static bool Load_DentureList(Window appWin, out string msg)
         {
             try
             {
                 var startTime = DateTime.Now;
                 //在菜单页选择排牙师管理
-                Button tlDockerManagement = appWin.Get<Button>(SearchCriteria.ByAutomationId("tlDockerManagement"));
-                tlDockerManagement.Click();
+                Button tlDentureManagement = appWin.Get<Button>(SearchCriteria.ByAutomationId("tlDentureManagement"));
+                tlDentureManagement.Click();
                 var endTime = DateTime.Now;
 
                 msg = "测试【点击排牙师管理菜单，加载所有排牙师】--通过，用时：" + (endTime - startTime).TotalSeconds;
@@ -42,18 +42,18 @@ namespace DentWhiteTest.TestCase
         /// <summary>
         /// 输入排牙师名称，点击查询按钮，加载该排牙师
         /// </summary>
-        public static bool Search_DockerName(Window appWin, out string msg)
+        public static bool Search_DentureName(Window appWin, out string msg)
         {
             try
             {
                 var startTime = DateTime.Now;
 
                 //输入排牙师名称
-                TextBox txtDockerAccount = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtDockerAccount"));
+                TextBox txtDentureAccount = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtDentureAccount"));
 
                 appWin.Keyboard.PressSpecialKey(TestStack.White.WindowsAPI.KeyboardInput.SpecialKeys.SHIFT);
                 Thread.Sleep(1000);
-                txtDockerAccount.Text = "dent";
+                txtDentureAccount.Text = "dent";
                 //appWin.Keyboard.PressSpecialKey(TestStack.White.WindowsAPI.KeyboardInput.SpecialKeys.SPACE);
 
                 //点击查询按钮
@@ -89,7 +89,7 @@ namespace DentWhiteTest.TestCase
         /// <summary>
         /// 输入排牙师姓名，点击查询按钮，加载该排牙师
         /// </summary>
-        public static bool Search_DockerUserName(Window appWin, out string msg)
+        public static bool Search_DentureUserName(Window appWin, out string msg)
         {
             try
             {
@@ -136,7 +136,7 @@ namespace DentWhiteTest.TestCase
         /// <summary>
         /// 选择在线查询排牙师，点击查询按钮，加载所有在线的排牙师
         /// </summary>
-        public static bool Search_DockerOnline(Window appWin, out string msg)
+        public static bool Search_DentureOnline(Window appWin, out string msg)
         {
             try
             {
@@ -184,7 +184,7 @@ namespace DentWhiteTest.TestCase
         /// <summary>
         /// 选择不在线查询排牙师，点击查询按钮，加载所有不在线的排牙师
         /// </summary>
-        public static bool Search_DockerOnline2(Window appWin, out string msg)
+        public static bool Search_DentureOnline2(Window appWin, out string msg)
         {
             try
             {
@@ -228,18 +228,18 @@ namespace DentWhiteTest.TestCase
         /// <summary>
         /// 排牙师名称为空，点击查询按钮，加载所有排牙师
         /// </summary>
-        public static bool Search_DockerNameNull(Window appWin, out string msg)
+        public static bool Search_DentureNameNull(Window appWin, out string msg)
         {
             try
             {
                 var startTime = DateTime.Now;
 
                 //排牙师名称为空
-                TextBox txtDockerAccount = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtDockerAccount"));
+                TextBox txtDentureAccount = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtDentureAccount"));
 
                 //appWin.Keyboard.PressSpecialKey(TestStack.White.WindowsAPI.KeyboardInput.SpecialKeys.SHIFT);
                 //Thread.Sleep(1000);
-                txtDockerAccount.Text = "";
+                txtDentureAccount.Text = "";
                 //appWin.Keyboard.PressSpecialKey(TestStack.White.WindowsAPI.KeyboardInput.SpecialKeys.SPACE);
 
                 //点击查询按钮
@@ -273,18 +273,18 @@ namespace DentWhiteTest.TestCase
         /// <summary>
         /// 输入排牙师姓名，点击查询按钮，加载该排牙师
         /// </summary>
-        public static bool Search_DockerUser_Name(Window appWin, out string msg)
+        public static bool Search_DentureUser_Name(Window appWin, out string msg)
         {
             try
             {
                 var startTime = DateTime.Now;
 
                 //输入排牙师名称
-                TextBox txtDockerAccount = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtDockerAccount"));
+                TextBox txtDentureAccount = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtDentureAccount"));
 
                 appWin.Keyboard.PressSpecialKey(TestStack.White.WindowsAPI.KeyboardInput.SpecialKeys.SHIFT);
                 Thread.Sleep(1000);
-                txtDockerAccount.Text = "dent";
+                txtDentureAccount.Text = "dent";
 
                 //输入排牙师姓名
                 TextBox txtName = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtName"));
@@ -333,7 +333,7 @@ namespace DentWhiteTest.TestCase
         /// <param name="appWin"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        /// 编辑按钮：btnEditDocker
+        /// 编辑按钮：btnEditDenture
         /// 编辑文本：txtUserName
         /// 密码：pwdUserPwd
         /// 邮箱地址：txtEmail
@@ -345,15 +345,15 @@ namespace DentWhiteTest.TestCase
         /// 确定：btnComfirmEditUser
         /// 取消：btnCancleEditUser
         /// 子窗体：btnComfirmEditUser
-        public static bool EditDocker_UserNameNull(Window appWin, out string msg)
+        public static bool EditDenture_UserNameNull(Window appWin, out string msg)
         {
             try
             {
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDocker = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDocker").AndIndex(10));
-                btnEditDocker.Click();
+                Button btnEditDenture = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDenture").AndIndex(10));
+                btnEditDenture.Click();
 
                 //账号名称为空
                 TextBox txtUserName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtUserName"));
@@ -389,12 +389,12 @@ namespace DentWhiteTest.TestCase
         }
 
         /// <summary>
-        /// 编辑用户，账号名称少于2个字|多于30个字
+        /// 编辑用户，账号名称最少5个字|多于30个字
         /// </summary>
         /// <param name="appWin"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public static bool EditDocker_UserNameLength(Window appWin, out string msg)
+        public static bool EditDenture_UserNameLength(Window appWin, out string msg)
         {
             try
             {
@@ -425,7 +425,7 @@ namespace DentWhiteTest.TestCase
                     try
                     {
                         //捕捉提醒信息，如果能捕捉到，则测试通过
-                        error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名称最少2个字，最多30个字！")).ToString();
+                        error_info = appWin.Get<Label>(SearchCriteria.ByText("账号名称最少5个字，最多30个字！")).ToString();
                         //关闭提醒框
                         btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
                         btnTips.Click();
@@ -434,24 +434,24 @@ namespace DentWhiteTest.TestCase
                         Button btnCancleEditUser = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnCancleEditUser"));
                         btnCancleEditUser.Click();
 
-                        msg = "测试【编辑排牙师，账号名称少于2个字|多于30个字】--通过，用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        msg = "测试【编辑排牙师，账号名称最少5个字|多于30个字】--通过，用时：" + (DateTime.Now - startTime).TotalSeconds;
                         return true;
                     }
                     catch
                     {
-                        msg = "测试【编辑排牙师，账号名称少于2个字|多于30个字】--未通过，缺少账号名称长度验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        msg = "测试【编辑排牙师，账号名称最少5个字|多于30个字】--未通过，缺少账号名称长度验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
                         return false;
                     }
                 }
                 catch
                 {
-                    msg = "测试【编辑排牙师，账号名称少于2个字|多于30个字】--未通过，缺少账号名称长度验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
+                    msg = "测试【编辑排牙师，账号名称最少5个字|多于30个字】--未通过，缺少账号名称长度验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
                     return false;
                 }
             }
             catch (Exception e)
             {
-                msg = "测试【编辑排牙师，账号名称少于2个字|多于30个字】--失败，原因：" + e.ToString();
+                msg = "测试【编辑排牙师，账号名称最少5个字|多于30个字】--失败，原因：" + e.ToString();
                 return false;
             }
         }
@@ -462,15 +462,15 @@ namespace DentWhiteTest.TestCase
         /// <param name="appWin"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public static bool EditDocker_NoEditPwd(Window appWin, out string msg)
+        public static bool EditDenture_NoEditPwd(Window appWin, out string msg)
         {
             try
             {
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDocker = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDocker").AndIndex(10));
-                btnEditDocker.Click();
+                Button btnEditDenture = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDenture").AndIndex(10));
+                btnEditDenture.Click();
 
                 //输入真实姓名
                 TextBox txtRealName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRealName"));
@@ -511,15 +511,15 @@ namespace DentWhiteTest.TestCase
         /// <param name="appWin"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public static bool EditDocker_PwdLength(Window appWin, out string msg)
+        public static bool EditDenture_PwdLength(Window appWin, out string msg)
         {
             try
             {
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDocker = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDocker").AndIndex(10));
-                btnEditDocker.Click();
+                Button btnEditDenture = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDenture").AndIndex(10));
+                btnEditDenture.Click();
 
                 //密码少于8个字符
                 TextBox pwdUserPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdUserPwd"));
@@ -583,15 +583,15 @@ namespace DentWhiteTest.TestCase
         /// <param name="appWin"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public static bool EditDocker_EmailError(Window appWin, out string msg)
+        public static bool EditDenture_EmailError(Window appWin, out string msg)
         {
             try
             {
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDocker = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDocker").AndIndex(10));
-                btnEditDocker.Click();
+                Button btnEditDenture = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDenture").AndIndex(10));
+                btnEditDenture.Click();
 
                 //邮箱地址格式不正确
                 TextBox txtEmail = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtEmail"));
@@ -638,7 +638,7 @@ namespace DentWhiteTest.TestCase
         /// <param name="appWin"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public static bool EditDocker_EditRole(Window appWin, out string msg)
+        public static bool EditDenture_EditRole(Window appWin, out string msg)
         {
             try
             {
@@ -648,8 +648,8 @@ namespace DentWhiteTest.TestCase
                 int i = num.Next(10, 25);//产生10到25的随机数
 
                 //点击编辑按钮
-                Button btnEditDocker = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDocker").AndIndex(i));
-                btnEditDocker.Click();
+                Button btnEditDenture = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDenture").AndIndex(i));
+                btnEditDenture.Click();
 
                 //修改状态
                 ComboBox cbStauts = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbStauts"));
@@ -692,15 +692,15 @@ namespace DentWhiteTest.TestCase
         /// <param name="appWin"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public static bool EditDocker_RealNameLength(Window appWin, out string msg)
+        public static bool EditDenture_RealNameLength(Window appWin, out string msg)
         {
             try
             {
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDocker = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDocker").AndIndex(10));
-                btnEditDocker.Click();
+                Button btnEditDenture = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDenture").AndIndex(10));
+                btnEditDenture.Click();
 
                 //真实姓名为空
                 TextBox txtRealName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRealName"));
@@ -764,19 +764,19 @@ namespace DentWhiteTest.TestCase
         /// <param name="appWin"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public static bool EditDockerSucc(Window appWin, out string msg)
+        public static bool EditDentureSucc(Window appWin, out string msg)
         {
             try
             {
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDocker = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDocker").AndIndex(10));
-                btnEditDocker.Click();
+                Button btnEditDenture = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDenture").AndIndex(10));
+                btnEditDenture.Click();
 
                 //账号名称不为空
                 TextBox txtUserName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtUserName"));
-                txtUserName.BulkText = Generate.GenerateChineseWords(3);
+                txtUserName.BulkText = Generate.GenerateChineseWords(5);
 
                 //密码不少于8个字符
                 TextBox pwdUserPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdUserPwd"));
@@ -852,15 +852,15 @@ namespace DentWhiteTest.TestCase
         /// <param name="appWin"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public static bool EditDocker_NoEdit(Window appWin, out string msg)
+        public static bool EditDenture_NoEdit(Window appWin, out string msg)
         {
             try
             {
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDocker = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDocker").AndIndex(10));
-                btnEditDocker.Click();
+                Button btnEditDenture = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDenture").AndIndex(10));
+                btnEditDenture.Click();
 
                 //点击确定按钮
                 Button btnComfirmEditUser = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmEditUser"));
@@ -900,15 +900,15 @@ namespace DentWhiteTest.TestCase
         /// <param name="appWin"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public static bool EditDocker_ClickCancle(Window appWin, out string msg)
+        public static bool EditDenture_ClickCancle(Window appWin, out string msg)
         {
             try
             {
                 var startTime = DateTime.Now;
 
                 //点击编辑按钮
-                Button btnEditDocker = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDocker").AndIndex(10));
-                btnEditDocker.Click();
+                Button btnEditDenture = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDenture").AndIndex(10));
+                btnEditDenture.Click();
 
                 //点击取消按钮
                 Button btnCancleEditUser = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnCancleEditUser"));
@@ -941,7 +941,7 @@ namespace DentWhiteTest.TestCase
         /// <summary>
         /// 点击删除排牙师按钮，弹出提醒框，选择确定
         /// </summary>
-        public static bool Del_DockerComfirm(Window appWin, out string msg)
+        public static bool Del_DentureComfirm(Window appWin, out string msg)
         {
             try
             {
@@ -951,8 +951,8 @@ namespace DentWhiteTest.TestCase
                 int i = num.Next(10, 25);//产生10到25的随机数
 
                 //点击删除按钮
-                Button btnDelDocker = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnDelDocker").AndIndex(i));
-                btnDelDocker.Click();
+                Button btnDelDenture = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnDelDenture").AndIndex(i));
+                btnDelDenture.Click();
 
                 try
                 {
@@ -997,7 +997,7 @@ namespace DentWhiteTest.TestCase
         /// <summary>
         /// 点击删除排牙师按钮，弹出提醒框，选择取消
         /// </summary>
-        public static bool Del_DockerCancle(Window appWin, out string msg)
+        public static bool Del_DentureCancle(Window appWin, out string msg)
         {
             try
             {
@@ -1007,8 +1007,8 @@ namespace DentWhiteTest.TestCase
                 int i = num.Next(10, 25);//产生10到25的随机数
 
                 //点击删除按钮
-                Button btnDelDocker = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnDelDocker").AndIndex(i));
-                btnDelDocker.Click();
+                Button btnDelDenture = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnDelDenture").AndIndex(i));
+                btnDelDenture.Click();
 
                 try
                 {

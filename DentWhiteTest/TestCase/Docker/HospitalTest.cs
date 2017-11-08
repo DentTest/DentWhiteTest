@@ -250,7 +250,7 @@ namespace DentWhiteTest.TestCase
 
                 //角色名称不为空
                 TextBox txtHospitalName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditHospitalView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtHospitalName"));
-                txtHospitalName.BulkText = Generate.GenerateChineseWords(4);
+                txtHospitalName.BulkText = Generate.GenerateChineseWords(5);
 
                 //选择省份
                 ComboBox cbProvince = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditHospitalView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbProvince"));
@@ -303,7 +303,7 @@ namespace DentWhiteTest.TestCase
 
                 //角色名称不为空
                 TextBox txtHospitalName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditHospitalView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtHospitalName"));
-                txtHospitalName.BulkText = Generate.GenerateChineseWords(4);
+                txtHospitalName.BulkText = Generate.GenerateChineseWords(5);
 
                 //选择省份
                 ComboBox cbProvince = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditHospitalView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbProvince"));
@@ -360,7 +360,7 @@ namespace DentWhiteTest.TestCase
 
                 //角色名称不为空
                 TextBox txtHospitalName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditHospitalView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtHospitalName"));
-                txtHospitalName.BulkText = Generate.GenerateChineseWords(4);
+                txtHospitalName.BulkText = Generate.GenerateChineseWords(5);
 
                 //选择省份
                 ComboBox cbProvince = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditHospitalView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbProvince"));
@@ -420,7 +420,7 @@ namespace DentWhiteTest.TestCase
 
                 //角色名称不为空
                 TextBox txtHospitalName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditHospitalView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtHospitalName"));
-                txtHospitalName.BulkText = Generate.GenerateChineseWords(4);
+                txtHospitalName.BulkText = Generate.GenerateChineseWords(5);
 
                 //选择省份
                 ComboBox cbProvince = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditHospitalView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbProvince"));
@@ -445,7 +445,7 @@ namespace DentWhiteTest.TestCase
                 //上传图片
                 var selectWinA = appWin.MdiChild(SearchCriteria.ByText("选择文件"));
                 TextBox tbImag = selectWinA.Get<TextBox>(SearchCriteria.ByAutomationId("1148"));
-                tbImag.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Images\15m.jpg";
+                tbImag.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Resourse\Images\15m.jpg";
                 Button btn = selectWinA.Get<Button>(SearchCriteria.ByAutomationId("1"));
                 btn.Click();
 
@@ -496,7 +496,7 @@ namespace DentWhiteTest.TestCase
 
                 //角色名称不为空
                 TextBox txtHospitalName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditHospitalView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtHospitalName"));
-                txtHospitalName.BulkText = Generate.GenerateChineseWords(4);
+                txtHospitalName.BulkText = Generate.GenerateChineseWords(5);
 
                 //选择省份
                 ComboBox cbProvince = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditHospitalView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbProvince"));
@@ -529,7 +529,7 @@ namespace DentWhiteTest.TestCase
                 //上传图片
                 var selectWinA = appWin.MdiChild(SearchCriteria.ByText("选择文件"));
                 TextBox tbImag = selectWinA.Get<TextBox>(SearchCriteria.ByAutomationId("1148"));
-                tbImag.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Images\3.jpg";
+                tbImag.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Resourse\Images\3.jpg";
                 Button btn = selectWinA.Get<Button>(SearchCriteria.ByAutomationId("1"));
                 btn.Click();
 
@@ -540,7 +540,7 @@ namespace DentWhiteTest.TestCase
                 //上传图片
                 var selectWin2 = appWin.MdiChild(SearchCriteria.ByText("选择文件"));
                 TextBox tbImag1 = selectWin2.Get<TextBox>(SearchCriteria.ByAutomationId("1148"));
-                tbImag1.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Images\3.jpg";
+                tbImag1.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Resourse\Images\3.jpg";
                 Button btn1 = selectWin2.Get<Button>(SearchCriteria.ByAutomationId("1"));
                 btn1.Click();
 
@@ -707,7 +707,7 @@ namespace DentWhiteTest.TestCase
 
                 //修改医院名称
                 TextBox txtHospitalName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditHospitalView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtHospitalName"));
-                txtHospitalName.BulkText = Generate.GenerateChineseWords(4);
+                txtHospitalName.BulkText = Generate.GenerateChineseWords(5);
 
                 //点击确定按钮
                 Button btnComfirmEditHospital = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmEditHospital"));
@@ -869,7 +869,7 @@ namespace DentWhiteTest.TestCase
                 //上传图片
                 var selectWinA = appWin.MdiChild(SearchCriteria.ByText("选择文件"));
                 TextBox tbImag = selectWinA.Get<TextBox>(SearchCriteria.ByAutomationId("1148"));
-                tbImag.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Images\4.jpg";
+                tbImag.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Resourse\Images\4.jpg";
                 Button btn = selectWinA.Get<Button>(SearchCriteria.ByAutomationId("1"));
                 btn.Click();
 
@@ -880,7 +880,7 @@ namespace DentWhiteTest.TestCase
                 //上传图片
                 var selectWin2 = appWin.MdiChild(SearchCriteria.ByText("选择文件"));
                 TextBox tbImag1 = selectWin2.Get<TextBox>(SearchCriteria.ByAutomationId("1148"));
-                tbImag1.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Images\4.jpg";
+                tbImag1.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Resourse\Images\4.jpg";
                 Button btn1 = selectWin2.Get<Button>(SearchCriteria.ByAutomationId("1"));
                 btn1.Click();
 
@@ -936,7 +936,7 @@ namespace DentWhiteTest.TestCase
                 //上传图片
                 var selectWinA = appWin.MdiChild(SearchCriteria.ByText("选择文件"));
                 TextBox tbImag = selectWinA.Get<TextBox>(SearchCriteria.ByAutomationId("1148"));
-                tbImag.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Images\15m.jpg";
+                tbImag.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Resourse\Images\15m.jpg";
                 Button btn = selectWinA.Get<Button>(SearchCriteria.ByAutomationId("1"));
                 btn.Click();
 
@@ -997,7 +997,7 @@ namespace DentWhiteTest.TestCase
                 //上传图片
                 var selectWinA = appWin.MdiChild(SearchCriteria.ByText("选择文件"));
                 TextBox tbImag = selectWinA.Get<TextBox>(SearchCriteria.ByAutomationId("1148"));
-                tbImag.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Images\15m.jpg";
+                tbImag.BulkText = AppDomain.CurrentDomain.BaseDirectory + @"Resourse\Images\15m.jpg";
                 Button btn = selectWinA.Get<Button>(SearchCriteria.ByAutomationId("1"));
                 btn.Click();
 

@@ -254,7 +254,7 @@ namespace DentWhiteTest.TestCase
 
                 //角色名称不为空
                 TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
-                txtRoleName.BulkText = Generate.GenerateChineseWords(3);
+                txtRoleName.BulkText = Generate.GenerateChineseWords(5);
 
                 //角色英文别名为空
                 TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));
@@ -518,7 +518,7 @@ namespace DentWhiteTest.TestCase
 
                 //修改角色名称
                 TextBox txtRoleName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleName"));
-                txtRoleName.BulkText = Generate.GenerateChineseWords(3);
+                txtRoleName.BulkText = Generate.GenerateChineseWords(5);
 
                 //修改角色英文别名
                 TextBox txtRoleAlias = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditRoleView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRoleAlias"));

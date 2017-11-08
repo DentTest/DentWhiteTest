@@ -24,6 +24,12 @@ namespace DentWhiteTest.Contacts
         /// <summary>
         /// 排牙师客户端
         /// </summary>
-        public static Window Win_Docker { get; set; }
+        public static Window Win_Denture { get; set; }
+
+        /// <summary>
+        /// 医生客户端
+        /// </summary>
+        public static Window Win_Doctor { get; set; }
     }
+
 }

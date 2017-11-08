@@ -8,14 +8,13 @@ namespace DentWhiteTest.Contacts
 {
     public class Const
     {
-        public const string DockerName = "排牙师";
-        public const string MallName = "商城后台管理";
+        public const string DoctorClientName = "Dentlab 医生版";
         public const string DentName = "德雅管理平台";
 
-        public const string DockerId = "docker_window";
-        public const string MallId = "mall_window";
+        public const string DentureId = "denture_window";
+        public const string DoctorId = "doctor_window";
 
-        public const string DockerPath = @"C:\Users\heygears\Desktop\德雅管理平台.appref-ms";
-        public const string MallPath = @"C:\Users\heygears\Desktop\商城后台管理客户端\MallManager.Client.exe";
+        public const string DenturePath = @"C:\Users\heygears\Desktop\德雅管理平台.appref-ms";
+        public const string DoctorPath = @"C:\Users\heygears\Desktop\Dentlab 医生版.appref-ms";
     }
 }

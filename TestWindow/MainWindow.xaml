@@ -23,17 +23,23 @@
         <StackPanel Margin="10">
             <DockPanel>
                 <Button x:Name="btnALL" Content="一键测试" Click="btnALL_Click"/>
-                <Button x:Name="btnLogin" Content="登录模块" Click="btnLogin_Click"/>
             </DockPanel>
             <Label Content="--- 德雅管理后台测试 ---" Margin="0,10,0,0"/>
+            <Button x:Name="btnDentureLogin" Content="登录德雅管理后台模块" Click="btnDentureLogin_Click" Width="150"/>
             <DockPanel>
                 <Button x:Name="btnHospital" Content="医院管理模块" Click="btnHospital_Click"/>
                 <Button  x:Name="btnDoctor" Content="医生管理模块" Click="btnDoctor_Click"/>
-                <Button  x:Name="btnDocker" Content="排牙师管理模块" Click="btnDocker_Click"/>
+                <Button  x:Name="btnDenture" Content="排牙师管理模块" Click="btnDenture_Click"/>
             </DockPanel>
             <DockPanel>
                 <Button  x:Name="btnRole" Content="角色管理模块" Click="btnRole_Click"/>
                 <Button  x:Name="btnUser" Content="用户管理模块" Click="btnUser_Click"/>
+            </DockPanel>
+
+            <Label Content="--- 医生端测试 ---" Margin="0,10,0,0"/>
+            <Button x:Name="btnDoctorLogin" Content="登录医生端模块" Click="btnDoctorLogin_Click" Width="150"/>
+            <DockPanel>
+                <Button x:Name="btnUploadReport" Content="打包并上传报告" Click="btnUploadReport_Click"/>
             </DockPanel>
         </StackPanel>
         <StackPanel Grid.Column="1" HorizontalAlignment="Left">

@@ -1,9 +1,9 @@
 ﻿using DentWhiteTest.Contacts;
-using DentWhiteTest.Module;
+using DentWhiteTest.Module.Denture;
+using DentWhiteTest.Module.Doctor;
 using System.ComponentModel;
 using System.Windows;
 using TestWindow.ViewModel;
-using WhiteFrameDemo.Module;
 
 namespace WhiteWindow
 {
@@ -32,24 +32,30 @@ namespace WhiteWindow
             }
 
             isRunning = true;
-            LoginModule.LoginAllTest();
+            //德雅管理后台模块
+            DentureLoginModule.LoginAllTest();
             HospitalModule.HospitalAllTest();
             DoctorModule.DoctorAllTest();
-            DockerModule.DockerAllTest();
+            DentureModule.DentureAllTest();
             RoleModule.RoleAllTest();
             DoctorModule.DoctorAllTest();
+
+            //医生端模块
+            DoctorLoginModule.LoginAllTest();
             isRunning = false;
 
             this.Activate();
            
         }
 
+        #region 德雅管理后台模块
+
         /// <summary>
         /// 登录
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void btnDentureLogin_Click(object sender, RoutedEventArgs e)
         {
             if (isRunning)
             {
@@ -59,13 +65,11 @@ namespace WhiteWindow
             }
 
             isRunning = true;
-            LoginModule.LoginAllTest();
+            DentureLoginModule.LoginAllTest();
             isRunning = false;
 
             this.Activate();
         }
-
-        #region 德雅管理后台模块
 
         /// <summary>
         /// 医院管理
@@ -114,7 +118,7 @@ namespace WhiteWindow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDocker_Click(object sender, RoutedEventArgs e)
+        private void btnDenture_Click(object sender, RoutedEventArgs e)
         {
             if (isRunning)
             {
@@ -124,7 +128,7 @@ namespace WhiteWindow
             }
 
             isRunning = true;
-            DockerModule.DockerAllTest();
+            DentureModule.DentureAllTest();
             isRunning = false;
 
             this.Activate();
@@ -174,7 +178,53 @@ namespace WhiteWindow
 
         #endregion
 
-        #region PropertyChanged
+        #region 医生端模块
+
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDoctorLogin_Click(object sender, RoutedEventArgs e)
+        {
+            if (isRunning)
+            {
+                Global.LstInfo = new System.Collections.ObjectModel.ObservableCollection<string>();
+                Global.LstInfo.Add("已经有测试用例在执行！");
+                return;
+            }
+
+            isRunning = true;
+            DoctorLoginModule.LoginAllTest();
+            isRunning = false;
+
+            this.Activate();
+        }
+
+        /// <summary>
+        /// 上传报告
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUploadReport_Click(object sender, RoutedEventArgs e)
+        {
+            if (isRunning)
+            {
+                Global.LstInfo = new System.Collections.ObjectModel.ObservableCollection<string>();
+                Global.LstInfo.Add("已经有测试用例在执行！");
+                return;
+            }
+
+            isRunning = true;
+            OrderListModule.DoctorAllTest();
+            isRunning = false;
+
+            this.Activate();
+        }
+
+        #endregion
+
+            #region PropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
