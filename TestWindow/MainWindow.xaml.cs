@@ -45,7 +45,7 @@ namespace WhiteWindow
             isRunning = false;
 
             this.Activate();
-           
+
         }
 
         #region 德雅管理后台模块
@@ -168,7 +168,7 @@ namespace WhiteWindow
                 Global.LstInfo.Add("已经有测试用例在执行！");
                 return;
             }
-         
+
             isRunning = true;
             DoctorModule.DoctorAllTest();
             isRunning = false;
@@ -222,17 +222,38 @@ namespace WhiteWindow
             this.Activate();
         }
 
+        /// <summary>
+        /// (技工厂)医院管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnFactoryHospital_Click(object sender, RoutedEventArgs e)
+        {
+            if (isRunning)
+            {
+                Global.LstInfo = new System.Collections.ObjectModel.ObservableCollection<string>();
+                Global.LstInfo.Add("已经有测试用例在执行！");
+                return;
+            }
+
+            isRunning = true;
+            FactoryHospitalModule.HospitalAllTest();
+            isRunning = false;
+
+            this.Activate();
+        }
+
         #endregion
 
-            #region PropertyChanged
+        #region PropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string name)
         {
-            if (PropertyChanged!=null)
+            if (PropertyChanged != null)
             {
-                PropertyChanged(this,new PropertyChangedEventArgs(name));
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
 

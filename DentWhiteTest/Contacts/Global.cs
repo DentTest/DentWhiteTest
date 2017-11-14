@@ -22,14 +22,14 @@ namespace DentWhiteTest.Contacts
         public static ObservableCollection<string> LstInfo { get; set; }
 
         /// <summary>
-        /// 排牙师客户端
+        /// 德雅客户端
         /// </summary>
         public static Window Win_Denture { get; set; }
 
         /// <summary>
-        /// 医生客户端
+        /// dentlab 客户端
         /// </summary>
-        public static Window Win_Doctor { get; set; }
+        public static Window Win_Dentlab { get; set; }
     }
 
 }

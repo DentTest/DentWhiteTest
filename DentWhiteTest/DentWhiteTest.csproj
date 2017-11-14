@@ -61,6 +61,7 @@
     <Compile Include="Module\Denture\UserModule.cs" />
     <Compile Include="Module\Doctor\AddOrderModule.cs" />
     <Compile Include="Module\Doctor\DoctorLoginModule.cs" />
+    <Compile Include="Module\Doctor\FactoryHospitalModule.cs" />
     <Compile Include="Module\Doctor\OrderListModule.cs" />
     <Compile Include="Module\Doctor\OrderDetailModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="TestCase\Docker\RoleTest.cs" />
     <Compile Include="TestCase\Docker\UserTest.cs" />
     <Compile Include="TestCase\Doctor\AddOrderTest.cs" />
+    <Compile Include="TestCase\Doctor\FactoryHospitalTest.cs" />
     <Compile Include="TestCase\Doctor\LoginDoctorTest.cs" />
     <Compile Include="TestCase\Doctor\OrderListTest.cs" />
     <Compile Include="TestCase\Doctor\OrderDetailTest.cs" />

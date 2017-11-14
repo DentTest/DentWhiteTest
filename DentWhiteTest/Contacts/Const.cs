@@ -15,6 +15,6 @@ namespace DentWhiteTest.Contacts
         public const string DoctorId = "doctor_window";
 
         public const string DenturePath = @"C:\Users\heygears\Desktop\德雅管理平台.appref-ms";
-        public const string DoctorPath = @"C:\Users\heygears\Desktop\Dentlab 医生版.appref-ms";
+        public const string DoctorPath = @"C:\Users\heygears\Desktop\Dentlab 客户端.appref-ms";
     }
 }
