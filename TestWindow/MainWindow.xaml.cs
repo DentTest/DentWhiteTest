@@ -216,7 +216,7 @@ namespace WhiteWindow
             }
 
             isRunning = true;
-            OrderListModule.DoctorAllTest();
+            UploadReportModule.DoctorAllTest();
             isRunning = false;
 
             this.Activate();
@@ -243,6 +243,110 @@ namespace WhiteWindow
             this.Activate();
         }
 
+        /// <summary>
+        /// 技师管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnTechnician_Click(object sender, RoutedEventArgs e)
+        {
+            if (isRunning)
+            {
+                Global.LstInfo = new System.Collections.ObjectModel.ObservableCollection<string>();
+                Global.LstInfo.Add("已经有测试用例在执行！");
+                return;
+            }
+
+            isRunning = true;
+            TechnicianListModule.TechnicianAllTest();
+            isRunning = false;
+
+            this.Activate();
+        }
+
+        /// <summary>
+        /// (医生端)医生管理员登录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDoctorManage_Click(object sender, RoutedEventArgs e)
+        {
+            if (isRunning)
+            {
+                Global.LstInfo = new System.Collections.ObjectModel.ObservableCollection<string>();
+                Global.LstInfo.Add("已经有测试用例在执行！");
+                return;
+            }
+
+            isRunning = true;
+            TechnicianListModule.TechnicianAllTest();
+            isRunning = false;
+
+            this.Activate();
+        }
+
+        /// <summary>
+        /// (医生端)医生新增订单
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddOrder_Click(object sender, RoutedEventArgs e)
+        {
+            if (isRunning)
+            {
+                Global.LstInfo = new System.Collections.ObjectModel.ObservableCollection<string>();
+                Global.LstInfo.Add("已经有测试用例在执行！");
+                return;
+            }
+
+            isRunning = true;
+            AddOrderModule.AddOrderAllTest();
+            isRunning = false;
+
+            this.Activate();
+        }
+
+        /// <summary>
+        /// (医生端)医生管理员
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSuperDoctor_Click(object sender, RoutedEventArgs e)
+        {
+            if (isRunning)
+            {
+                Global.LstInfo = new System.Collections.ObjectModel.ObservableCollection<string>();
+                Global.LstInfo.Add("已经有测试用例在执行！");
+                return;
+            }
+
+            isRunning = true;
+            SuperDoctorModule.DoctorAllTest();
+            isRunning = false;
+
+            this.Activate();
+        }
+
+        /// <summary>
+        /// (技师管理员)技师管理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnFactoryAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            if (isRunning)
+            {
+                Global.LstInfo = new System.Collections.ObjectModel.ObservableCollection<string>();
+                Global.LstInfo.Add("已经有测试用例在执行！");
+                return;
+            }
+
+            isRunning = true;
+            FactoryAdminModule.FactoryAdminAllTest();
+            isRunning = false;
+
+            this.Activate();
+        }
         #endregion
 
         #region PropertyChanged

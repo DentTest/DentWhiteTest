@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WhiteWindow" 
         mc:Ignorable="d"
-        Title="德雅自动化测试系统" Height="620" Width="1000">
+        Title="德雅自动化测试系统" Height="800" Width="1200">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="90"/>
@@ -18,7 +18,7 @@
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400"/>
-            <ColumnDefinition Width="600"/>
+            <ColumnDefinition Width="800"/>
         </Grid.ColumnDefinitions>
         <StackPanel Margin="10">
             <DockPanel>
@@ -38,14 +38,28 @@
 
             <Label Content="--- 医生端测试 ---" Margin="0,10,0,0"/>
             <Button x:Name="btnDoctorLogin" Content="登录医生端模块" Click="btnDoctorLogin_Click" Width="120"/>
+            <Label Content="--- 技师测试 ---" Margin="0,5,0,0"/>
             <DockPanel>
-                <Button x:Name="btnUploadReport" Content="打包并上传报告" Click="btnUploadReport_Click" Width="120"/>
-                <Button x:Name="btnFactoryHospital" Content="(技工厂)医院管理" Click="btnFactoryHospital_Click" Width="120"/>
+                <Button x:Name="btnUploadReport" Content="上传报告" Click="btnUploadReport_Click" Width="120"/>
+                <Button x:Name="btnTechnician" Content="订单管理" Click="btnTechnician_Click" Width="120"/>
+            </DockPanel>
+            <Label Content="--- 医生测试 ---" Margin="0,5,0,0"/>
+            <DockPanel>
+                <Button x:Name="btnAddOrder" Content="(医生)新增订单" Click="btnAddOrder_Click" Width="120"/>
+            </DockPanel>
+            <Label Content="--- 医生管理员测试 ---" Margin="0,5,0,0"/>
+            <DockPanel>
+                <Button x:Name="btnSuperDoctor" Content="医生管理" Click="btnSuperDoctor_Click" Width="120"/>
+            </DockPanel>
+            <Label Content="--- 技师管理员测试 ---" Margin="0,5,0,0"/>
+            <DockPanel>
+                <Button x:Name="btnFactoryHospital" Content="医院管理" Click="btnFactoryHospital_Click" Width="120"/>
+                <Button x:Name="btnFactoryAdmin" Content="技师管理" Click="btnFactoryAdmin_Click" Width="120"/>
             </DockPanel>
         </StackPanel>
         <StackPanel Grid.Column="1" HorizontalAlignment="Left">
             <Label Content="测试结果信息：" />
-            <ListBox x:Name="lbInfo" ItemsSource="{Binding Global.LstInfo}" Height="500" Width="500" FontStretch="Expanded" SelectionChanged="ListBox_SelectionChanged"/>
+            <ListBox x:Name="lbInfo" ItemsSource="{Binding Global.LstInfo}" Height="700" Width="750" FontStretch="Expanded" ItemStringFormat="\n" SelectionChanged="ListBox_SelectionChanged"/>
         </StackPanel>
     </Grid>
 </Window>
