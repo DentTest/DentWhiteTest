@@ -87,6 +87,16 @@ namespace DentWhiteTest.Module.Denture
             Global.LstInfo.Add(msg11);
             if (!res_Launch) return;
 
+            //新增用户，真实姓名为空|真实姓名多于30个字
+            res_Launch = UserTest.AddUser_IDCard(Global.Win_Denture, out string msg25);
+            Global.LstInfo.Add(msg25);
+            if (!res_Launch) return;
+
+            //新增用户，真实姓名为空|真实姓名多于30个字
+            res_Launch = UserTest.AddUser_Phone(Global.Win_Denture, out string msg26);
+            Global.LstInfo.Add(msg26);
+            if (!res_Launch) return;
+
             //新增用户成功，同时关闭新增用户窗口
             res_Launch = UserTest.AddUserSucc(Global.Win_Denture, out string msg8);
             Global.LstInfo.Add(msg8);
@@ -134,6 +144,16 @@ namespace DentWhiteTest.Module.Denture
             //编辑用户，真实姓名为空|真实姓名多于30个字符
             res_Launch = UserTest.EditUser_RealNameLength(Global.Win_Denture, out string msg19);
             Global.LstInfo.Add(msg19);
+            if (!res_Launch) return;
+
+            //编辑用户，真实姓名为空|真实姓名多于30个字符
+            res_Launch = UserTest.EditUser_IDCard(Global.Win_Denture, out string msg27);
+            Global.LstInfo.Add(msg27);
+            if (!res_Launch) return;
+
+            //编辑用户，真实姓名为空|真实姓名多于30个字符
+            res_Launch = UserTest.EditUser_Phone(Global.Win_Denture, out string msg28);
+            Global.LstInfo.Add(msg28);
             if (!res_Launch) return;
 
             //编辑用户成功，同时关闭编辑用户窗口

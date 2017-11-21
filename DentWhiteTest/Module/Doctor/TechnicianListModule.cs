@@ -37,31 +37,31 @@ namespace DentWhiteTest.Module.Doctor
             #region 订单查询
 
             //点击订单列表
-            res_Launch = TechnicianTest.Load_OrderList(Global.Win_Dentlab, out string msg1);
+            res_Launch = TechnicianListTest.Load_OrderList(Global.Win_Dentlab, out string msg1);
             Global.LstInfo.Add(msg1);
             if (!res_Launch) return;
 
             //输入订单ID进行查询
-            res_Launch = TechnicianTest.Search_OrderID(Global.Win_Dentlab, out string msg2);
+            res_Launch = TechnicianListTest.Search_OrderID(Global.Win_Dentlab, out string msg2);
             Global.LstInfo.Add(msg2);
             if (!res_Launch) return;
 
             //不输入内容点击查询
-            res_Launch = TechnicianTest.Search_OrderIDNull(Global.Win_Dentlab, out string msg3);
+            res_Launch = TechnicianListTest.Search_OrderIDNull(Global.Win_Dentlab, out string msg3);
             Global.LstInfo.Add(msg3);
             if (!res_Launch) return;
 
             //根据状态进行查询
-            res_Launch = TechnicianTest.Search_Statusl(Global.Win_Dentlab, out string msg4);
+            res_Launch = TechnicianListTest.Search_Statusl(Global.Win_Dentlab, out string msg4);
             Global.LstInfo.Add(msg4);
             if (!res_Launch) return;
 
             //输入医生名称查询
-            res_Launch = TechnicianTest.Search_DoctorName(Global.Win_Dentlab, out string msg5);
+            res_Launch = TechnicianListTest.Search_DoctorName(Global.Win_Dentlab, out string msg5);
             if (!res_Launch) return;
 
             //输入生产批号查询
-            res_Launch = TechnicianTest.Search_UniqueNumber(Global.Win_Dentlab, out string msg6);
+            res_Launch = TechnicianListTest.Search_UniqueNumber(Global.Win_Dentlab, out string msg6);
             Global.LstInfo.Add(msg6);
             if (!res_Launch) return;
             #endregion

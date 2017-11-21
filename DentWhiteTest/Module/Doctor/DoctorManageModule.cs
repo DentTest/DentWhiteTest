@@ -12,7 +12,7 @@ using WhiteFrameDemo.TestCase;
 
 namespace DentWhiteTest.Module.Denture
 {
-    public class SuperDoctorModule
+    public class SuperManageModule
     {
         public static void DoctorAllTest()
         {
@@ -96,9 +96,24 @@ namespace DentWhiteTest.Module.Denture
             Global.LstInfo.Add(msg13);
             if (!res_Launch) return;
 
+            // 新增医生，身份证为空|身份证格式错误
+            res_Launch = DoctorManagerTest.AddDoctor_IDCard(Global.Win_Dentlab, out string msg30);
+            Global.LstInfo.Add(msg30);
+            if (!res_Launch) return;
+
             // 新增用户，医院为空
             res_Launch = DoctorManagerTest.AddDoctor_HospitalNull(Global.Win_Dentlab, out string msg11);
             Global.LstInfo.Add(msg11);
+            if (!res_Launch) return;
+
+            // 新增医生，手机为空|手机格式错误
+            res_Launch = DoctorManagerTest.AddDoctor_Phone(Global.Win_Dentlab, out string msg31);
+            Global.LstInfo.Add(msg31);
+            if (!res_Launch) return;
+
+            // 新增医生，市场负责人为空
+            res_Launch = DoctorManagerTest.AddDoctor_MarkerNull(Global.Win_Dentlab, out string msg32);
+            Global.LstInfo.Add(msg32);
             if (!res_Launch) return;
 
             // 新增医生成功，同时关闭新增医生窗口
@@ -143,6 +158,16 @@ namespace DentWhiteTest.Module.Denture
             Global.LstInfo.Add(msg20);
             if (!res_Launch) return;
 
+            //编辑医生，身份证为空|身份证格式错误
+            res_Launch = DoctorManagerTest.EditDoctor_IDCard(Global.Win_Dentlab, out string msg33);
+            Global.LstInfo.Add(msg33);
+            if (!res_Launch) return;
+
+            //编辑医生，手机为空|手机格式错误
+            res_Launch = DoctorManagerTest.EditDoctor_Phone(Global.Win_Dentlab, out string msg34);
+            Global.LstInfo.Add(msg34);
+            if (!res_Launch) return;
+
             //编辑医生，修改所在医院
             res_Launch = DoctorManagerTest.EditDoctor_EditHospital(Global.Win_Dentlab, out string msg21);
             Global.LstInfo.Add(msg21);
@@ -182,6 +207,16 @@ namespace DentWhiteTest.Module.Denture
             if (!res_Launch) return;
             #endregion
 
+            #region 匹配技师
+            //击匹配技师按钮，弹出提醒框，选择确定
+            res_Launch = DoctorManagerTest.MatchingTechnician_Succ(Global.Win_Dentlab, out string msg28);
+            Global.LstInfo.Add(msg28);
+            if (!res_Launch) return;
+            //不选择技师，直接点击确定
+            res_Launch = DoctorManagerTest.MatchingTechnician_Null(Global.Win_Dentlab, out string msg29);
+            Global.LstInfo.Add(msg29);
+            if (!res_Launch) return;
+            #endregion
 
             //关闭客户端
             Global.Win_Dentlab.Close();

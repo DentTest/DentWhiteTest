@@ -67,7 +67,7 @@
     <Compile Include="Module\Denture\UserModule.cs" />
     <Compile Include="Module\Doctor\AddOrderModule.cs" />
     <Compile Include="Module\Doctor\DoctorLoginModule.cs" />
-    <Compile Include="Module\Doctor\FactoryAdminModule.cs" />
+    <Compile Include="Module\Doctor\FactoryTechicianModule.cs" />
     <Compile Include="Module\Doctor\DoctorManageModule.cs" />
     <Compile Include="Module\Doctor\FactoryHospitalModule.cs" />
     <Compile Include="Module\Doctor\TechnicianListModule.cs" />
@@ -79,15 +79,17 @@
     <Compile Include="TestCase\Docker\HospitalTest.cs" />
     <Compile Include="TestCase\Docker\LoginDentureTest.cs" />
     <Compile Include="TestCase\Docker\RoleTest.cs" />
+    <Compile Include="TestCase\Docker\ProductTest.cs" />
     <Compile Include="TestCase\Docker\UserTest.cs" />
     <Compile Include="TestCase\Doctor\AddOrderTest.cs" />
-    <Compile Include="TestCase\Doctor\FactoryAdminTest.cs" />
+    <Compile Include="TestCase\Doctor\FactoryDoctorAdminTest.cs" />
+    <Compile Include="TestCase\Doctor\FactoryDoctorTest.cs" />
+    <Compile Include="TestCase\Doctor\FactoryTechnicianTest.cs" />
     <Compile Include="TestCase\Doctor\DoctorManagerTest.cs" />
-    <Compile Include="TestCase\Doctor\UploadReportTest.cs" />
+    <Compile Include="TestCase\Doctor\TechnicianListTest.cs" />
     <Compile Include="TestCase\Doctor\FactoryHospitalTest.cs" />
     <Compile Include="TestCase\Doctor\LoginDoctorTest.cs" />
-    <Compile Include="TestCase\Doctor\OrderListTest.cs" />
-    <Compile Include="TestCase\Doctor\OrderDetailTest.cs" />
+    <Compile Include="TestCase\Doctor\UploadReportTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resourse\Images\1.jpg">

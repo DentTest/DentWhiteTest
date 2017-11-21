@@ -42,6 +42,12 @@ namespace WhiteWindow
 
             //医生端模块
             DoctorLoginModule.LoginAllTest();
+            SuperManageModule.DoctorAllTest();
+            FactoryAdminModule.FactoryAdminAllTest();
+            FactoryHospitalModule.HospitalAllTest();
+            TechnicianListModule.TechnicianAllTest();
+            UploadReportModule.DoctorAllTest();
+
             isRunning = false;
 
             this.Activate();
@@ -321,7 +327,7 @@ namespace WhiteWindow
             }
 
             isRunning = true;
-            SuperDoctorModule.DoctorAllTest();
+            SuperManageModule.DoctorAllTest();
             isRunning = false;
 
             this.Activate();

@@ -574,6 +574,167 @@ namespace DentWhiteTest.TestCase
         }
 
         /// <summary>
+        /// 新增用户，身份证为空|身份证格式不正确
+        /// </summary>
+        /// <param name="appWin"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public static bool AddUser_IDCard(Window appWin, out string msg)
+        {
+            try
+            {
+                var startTime = DateTime.Now;
+
+                //点击新增按钮
+                Button btnAddUser = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddUser"));
+                btnAddUser.Click();
+
+                //正确账号名称
+                TextBox txtUserName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtUserName"));
+                txtUserName.BulkText = Generate.GenerateChineseWords(5);
+
+                //密码不少于8个字符
+                TextBox pwdUserPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdUserPwd"));
+                pwdUserPwd.Text = "12345678";
+
+                //选择角色
+                ComboBox cbRole = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbRole"));
+                cbRole.Select(1);
+
+                //真实姓名为空
+                TextBox txtRealName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRealName"));
+                txtRealName.Text = "发发发";
+
+                //身份证为空
+                TextBox txtIDCard = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtIDCard"));
+                txtIDCard.Text = "";
+
+                //点击确定按钮
+                Button btnComfirmAddUser = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmAddUser"));
+                btnComfirmAddUser.Click();
+
+                try
+                {
+                    //捕捉提醒信息，如果能捕捉到，则测试通过
+                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("请填写身份证号码！")).ToString();
+                    //关闭提醒框
+                    Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
+                    btnTips.Click();
+
+                    //身份证格式不正确
+                    txtIDCard.Text = "44088319980809";
+
+                    btnComfirmAddUser.Click();
+
+                    try
+                    {
+                        //捕捉提醒信息，如果能捕捉到，则测试通过
+                        error_info = appWin.Get<Label>(SearchCriteria.ByText("身份证号码格式不正确！")).ToString();
+                        //关闭提醒框
+                        btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
+                        btnTips.Click();
+
+                        msg = "测试【新增用户，身份证不为空|身份证格式不正确】--通过，用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        return true;
+                    }
+                    catch
+                    {
+                        msg = "测试【新增用户，身份证不为空|身份证格式不正确】--未通过，缺少身份证格式验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        return false;
+                    }
+                }
+                catch
+                {
+                    msg = "测试【新增用户，身份证不为空|身份证格式不正确】--未通过，缺少身份证空验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                msg = "测试【新增用户，身份证不为空|身份证格式不正确】--失败，原因：" + e.ToString();
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 新增用户，手机号码为空|手机号码格式不正确
+        /// </summary>
+        /// <param name="appWin"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public static bool AddUser_Phone(Window appWin, out string msg)
+        {
+            try
+            {
+                var startTime = DateTime.Now;
+
+                //点击新增按钮
+                Button btnAddUser = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnAddUser"));
+                btnAddUser.Click();
+
+                //正确账号名称
+                TextBox txtUserName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtUserName"));
+                txtUserName.BulkText = Generate.GenerateChineseWords(5);
+
+                //密码不少于8个字符
+                TextBox pwdUserPwd = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("pwdUserPwd"));
+                pwdUserPwd.Text = "12345678";
+
+                //选择角色
+                ComboBox cbRole = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbRole"));
+                cbRole.Select(1);
+
+                //真实姓名为空
+                TextBox txtRealName = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtRealName"));
+                txtRealName.Text = "";
+
+                //点击确定按钮
+                Button btnComfirmAddUser = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmAddUser"));
+                btnComfirmAddUser.Click();
+
+                try
+                {
+                    //捕捉提醒信息，如果能捕捉到，则测试通过
+                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("请填写手机号码！")).ToString();
+                    //关闭提醒框
+                    Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
+                    btnTips.Click();
+
+                    //手机不正确
+                    TextBox txtTel = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtTel"));
+                    txtTel.Text = "134222222";
+
+                    btnComfirmAddUser.Click();
+
+                    try
+                    {
+                        error_info = appWin.Get<Label>(SearchCriteria.ByText("手机号码格式不正确！")).ToString();
+                        btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
+                        btnTips.Click();
+
+                        msg = "测试【新增用户，手机号码格式不正确】--通过,用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        return true;
+                    }
+                    catch
+                    {
+                        msg = "测试【新增用户，手机号码格式不正确】--未通过,缺少身份证格式验证，用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        return false;
+                    }
+                }
+                catch
+                {
+                    msg = "测试【新增用户，手机号码格式不正确】--未通过，缺少身份证号码验证，用时：" + (DateTime.Now - startTime).TotalSeconds;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                msg = "测试【新增用户，手机号码格式不正确】--失败，原因：" + e.ToString();
+                return false;
+            }
+        }
+
+        /// <summary>
         /// 新增用户成功，同时关闭新增用户窗口
         /// </summary>
         /// <param name="appWin"></param>
@@ -1116,6 +1277,143 @@ namespace DentWhiteTest.TestCase
             catch (Exception e)
             {
                 msg = "测试【编辑用户，真实姓名为空|真实姓名多于30个字符】--失败，原因：" + e.ToString();
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 编辑用户，身份证为空|身份证格式错误
+        /// </summary>
+        /// <param name="appWin"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public static bool EditUser_IDCard(Window appWin, out string msg)
+        {
+            try
+            {
+                var startTime = DateTime.Now;
+
+                //点击编辑按钮
+                Button btnEditUser = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditUser").AndIndex(10));
+                btnEditUser.Click();
+
+                //真实姓名为空
+                TextBox txtIDCard = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtIDCard"));
+                txtIDCard.Text = "";
+
+                //点击确定按钮
+                Button btnComfirmEditUser = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmEditUser"));
+                btnComfirmEditUser.Click();
+
+                try
+                {
+                    //捕捉提醒信息，如果能捕捉到，则测试通过
+                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("请填写身份证号码！")).ToString();
+                    //关闭提醒框
+                    Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
+                    btnTips.Click();
+
+                    //身份证格式不正确
+                    txtIDCard.Text = "44088319980809";
+
+                    btnComfirmEditUser.Click();
+
+                    try
+                    {
+                        //捕捉提醒信息，如果能捕捉到，则测试通过
+                        error_info = appWin.Get<Label>(SearchCriteria.ByText("身份证号码格式不正确！")).ToString();
+                        //关闭提醒框
+                        btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
+                        btnTips.Click();
+
+                        //点击取消按钮，关闭编辑窗口
+                        Button btnCancleEditTechnician = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnCancleEditTechnician"));
+                        btnCancleEditTechnician.Click();
+
+                        msg = "测试【编辑用户，身份证不为空|身份证格式不正确】--通过，用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        return true;
+                    }
+                    catch
+                    {
+                        msg = "测试【编辑用户，身份证不为空|身份证格式不正确】--未通过，缺少身份证格式验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        return false;
+                    }
+                }
+                catch
+                {
+                    msg = "测试【编辑用户，身份证不为空|身份证格式不正确】--未通过，缺少身份证空验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                msg = "测试【编辑用户，身份证不为空|身份证格式不正确】--失败，原因：" + e.ToString();
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 编辑用户，手机号码为空|手机号码格式错误
+        /// </summary>
+        /// <param name="appWin"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public static bool EditUser_Phone(Window appWin, out string msg)
+        {
+            try
+            {
+                var startTime = DateTime.Now;
+
+                //点击编辑按钮
+                Button btnEditUser = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditUser").AndIndex(10));
+                btnEditUser.Click();
+
+                //手机号码为空
+                TextBox txtTel = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtTel"));
+                txtTel.Text = "";
+
+                //点击确定按钮
+                Button btnComfirmEditUser = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmEditUser"));
+                btnComfirmEditUser.Click();
+
+                try
+                {
+                    //捕捉提醒信息，如果能捕捉到，则测试通过
+                    string error_info = appWin.Get<Label>(SearchCriteria.ByText("请填写手机号码！")).ToString();
+                    //关闭提醒框
+                    Button btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
+                    btnTips.Click();
+
+                    //手机不正确
+                    txtTel = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditUserView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtTel"));
+                    txtTel.Text = "1342222";
+
+                    btnComfirmEditUser.Click();
+
+                    try
+                    {
+                        error_info = appWin.Get<Label>(SearchCriteria.ByText("手机号码格式不正确！")).ToString();
+                        btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
+                        btnTips.Click();
+
+                        msg = "测试【编辑技师，手机号码格式不正确】--通过,用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        return true;
+                    }
+                    catch
+                    {
+                        msg = "测试【编辑技师，手机号码格式不正确】--未通过,缺少手机号码格式验证，用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        return false;
+                    }
+                }
+                catch
+                {
+                    msg = "测试【编辑技师，手机号码格式不正确】--未通过，缺少手机号码验证，用时：" + (DateTime.Now - startTime).TotalSeconds;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                msg = "测试【新增技师，手机号码格式不正确】--失败，原因：" + e.ToString();
                 return false;
             }
         }
