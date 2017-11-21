@@ -212,7 +212,7 @@ namespace DentWhiteTest.TestCase.Docker
                 TextBox tbUser = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("txtUserName"));
                 TextBox tdPwd = appWin.Get<TextBox>(SearchCriteria.ByAutomationId("pbPassword"));
                 //Language.Set("en");
-                //appWin.Keyboard.PressSpecialKey(TestStack.White.WindowsAPI.KeyboardInput.SpecialKeys.SHIFT);
+                appWin.Keyboard.PressSpecialKey(TestStack.White.WindowsAPI.KeyboardInput.SpecialKeys.SHIFT);
                 //Thread.Sleep(1000);
                 //tbUser.Text = "test_admin";
                 tbUser.Text = "bwl_denture";
