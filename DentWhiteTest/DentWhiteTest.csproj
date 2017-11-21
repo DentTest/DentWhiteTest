@@ -72,7 +72,6 @@
     <Compile Include="Module\Doctor\FactoryHospitalModule.cs" />
     <Compile Include="Module\Doctor\TechnicianListModule.cs" />
     <Compile Include="Module\Doctor\UploadReportModule.cs" />
-    <Compile Include="Module\Doctor\OrderDetailModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCase\Docker\DockerTest.cs" />
     <Compile Include="TestCase\Docker\DoctorTest.cs" />
@@ -82,8 +81,6 @@
     <Compile Include="TestCase\Docker\ProductTest.cs" />
     <Compile Include="TestCase\Docker\UserTest.cs" />
     <Compile Include="TestCase\Doctor\AddOrderTest.cs" />
-    <Compile Include="TestCase\Doctor\FactoryDoctorAdminTest.cs" />
-    <Compile Include="TestCase\Doctor\FactoryDoctorTest.cs" />
     <Compile Include="TestCase\Doctor\FactoryTechnicianTest.cs" />
     <Compile Include="TestCase\Doctor\DoctorManagerTest.cs" />
     <Compile Include="TestCase\Doctor\TechnicianListTest.cs" />
