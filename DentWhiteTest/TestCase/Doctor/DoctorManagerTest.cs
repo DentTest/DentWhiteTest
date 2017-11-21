@@ -13,8 +13,6 @@ namespace DentWhiteTest.TestCase
 {
     public class DoctorManagerTest
     {
-
-
         #region 医生列表
 
         /// <summary>
@@ -940,9 +938,9 @@ namespace DentWhiteTest.TestCase
                 //TextBox txtMajor = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMajor"));
                 //txtMajor.BulkText = Generate.GenerateChineseWords(3);
 
-                ////市场负责人不为空
-                //TextBox txtMarketAdmin = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMarketAdmin"));
-                //txtMarketAdmin.BulkText = Generate.GenerateChineseWords(3);
+                //市场负责人不为空
+                TextBox txtMarketAdmin = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtMarketAdmin"));
+                txtMarketAdmin.BulkText = Generate.GenerateChineseWords(3);
 
                 //选择状态
                 ComboBox cbStauts = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbStauts"));
@@ -1438,27 +1436,27 @@ namespace DentWhiteTest.TestCase
                         btnTips.Click();
 
                         //点击取消按钮，关闭编辑窗口
-                        Button btnCancleEditTechnician = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnCancleEditTechnician"));
+                        Button btnCancleEditTechnician = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnCancleEditDoctor"));
                         btnCancleEditTechnician.Click();
 
-                        msg = "测试【编辑技师，身份证不为空|身份证格式不正确】--通过，用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        msg = "测试【编辑医生，身份证不为空|身份证格式不正确】--通过，用时：" + (DateTime.Now - startTime).TotalSeconds;
                         return true;
                     }
                     catch
                     {
-                        msg = "测试【编辑技师，身份证不为空|身份证格式不正确】--未通过，缺少身份证格式验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        msg = "测试【编辑医生，身份证不为空|身份证格式不正确】--未通过，缺少身份证格式验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
                         return false;
                     }
                 }
                 catch
                 {
-                    msg = "测试【编辑技师，身份证不为空|身份证格式不正确】--未通过，缺少身份证空验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
+                    msg = "测试【编辑医生，身份证不为空|身份证格式不正确】--未通过，缺少身份证空验证提醒。用时：" + (DateTime.Now - startTime).TotalSeconds;
                     return false;
                 }
             }
             catch (Exception e)
             {
-                msg = "测试【编辑技师，身份证不为空|身份证格式不正确】--失败，原因：" + e.ToString();
+                msg = "测试【编辑医生，身份证不为空|身份证格式不正确】--失败，原因：" + e.ToString();
                 return false;
             }
         }
@@ -1479,9 +1477,13 @@ namespace DentWhiteTest.TestCase
                 Button btnEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnEditDoctor").AndIndex(2));
                 btnEditDoctor.Click();
 
-                //真实姓名为空
+                //手机号码为空
                 TextBox txtPhone = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtPhone"));
                 txtPhone.Text = "";
+
+                //身份证
+                TextBox txtIDCard = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtIDCard"));
+                txtIDCard.Text = "445321199603032121";
 
                 //点击确定按钮
                 Button btnComfirmEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmEditDoctor"));
@@ -1496,40 +1498,37 @@ namespace DentWhiteTest.TestCase
                     btnTips.Click();
 
                     //手机不正确
-                    txtPhone = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtTel"));
                     txtPhone.Text = "1342222";
 
                     btnComfirmEditDoctor.Click();
 
                     try
                     {
-                        error_info = appWin.Get<Label>(SearchCriteria.ByText("手机号码格式不正确！")).ToString();
+                        error_info = appWin.Get<Label>(SearchCriteria.ByText("手机格式不正确！")).ToString();
                         btnTips = appWin.Get<Button>(SearchCriteria.ByAutomationId("2"));
                         btnTips.Click();
 
-                        msg = "测试【编辑技师，手机号码格式不正确】--通过,用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        msg = "测试【编辑医生，手机格式不正确】--通过,用时：" + (DateTime.Now - startTime).TotalSeconds;
                         return true;
                     }
                     catch
                     {
-                        msg = "测试【编辑技师，手机号码格式不正确】--未通过,缺少手机号码格式验证，用时：" + (DateTime.Now - startTime).TotalSeconds;
+                        msg = "测试【编辑医生，手机格式不正确】--未通过,缺少手机格式验证，用时：" + (DateTime.Now - startTime).TotalSeconds;
                         return false;
                     }
                 }
                 catch
                 {
-                    msg = "测试【编辑技师，手机号码格式不正确】--未通过，缺少手机号码验证，用时：" + (DateTime.Now - startTime).TotalSeconds;
+                    msg = "测试【编辑医生，手机格式不正确】--未通过，缺少手机空验证，用时：" + (DateTime.Now - startTime).TotalSeconds;
                     return false;
                 }
             }
             catch (Exception e)
             {
-                msg = "测试【新增技师，手机号码格式不正确】--失败，原因：" + e.ToString();
+                msg = "测试【新增医生，手机格式不正确】--失败，原因：" + e.ToString();
                 return false;
             }
         }
-
-
 
         /// <summary>
         /// 编辑医生，修改所在医院
@@ -1550,6 +1549,10 @@ namespace DentWhiteTest.TestCase
                 //修改所在医院
                 ComboBox cbHospital = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<ComboBox>(SearchCriteria.ByAutomationId("cbHospital"));
                 cbHospital.Select(1);
+
+                //手机号码为空
+                TextBox txtPhone = appWin.MdiChild(SearchCriteria.ByAutomationId("AddOrEditDoctorView")).Get<TextBox>(SearchCriteria.ByAutomationId("txtPhone"));
+                txtPhone.Text = "13217441001";
 
                 //点击确定按钮
                 Button btnComfirmEditDoctor = appWin.Get<Button>(SearchCriteria.ByAutomationId("btnComfirmEditDoctor"));
@@ -2037,6 +2040,5 @@ namespace DentWhiteTest.TestCase
             }
         }
         #endregion
-
     }
 }

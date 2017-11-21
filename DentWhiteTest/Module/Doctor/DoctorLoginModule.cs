@@ -5,13 +5,16 @@ using DentWhiteTest.TestCase.Doctor;
 
 namespace DentWhiteTest.Module.Doctor
 {
+    /// <summary>
+    /// Dentlab 客户端 登录模块测试
+    /// </summary>
     public class DoctorLoginModule
     {
         public static void LoginAllTest()
         {
             Global.LstInfo.Add("--- 登录模块 ---");
 
-            #region 登陆成功
+            #region 登陆医生成功
 
             //启动一个客户端
             bool res_Launch = WinHelp.Launch(out Window appWin, out string msg, Const.DoctorPath, Const.DoctorClientName, Const.DoctorId);

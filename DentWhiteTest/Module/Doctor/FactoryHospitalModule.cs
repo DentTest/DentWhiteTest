@@ -12,6 +12,9 @@ using WhiteFrameDemo.TestCase;
 
 namespace DentWhiteTest.Module.Doctor
 {
+    /// <summary>
+    /// 医院模块测试 技工厂端
+    /// </summary>
     public class FactoryHospitalModule
     {
         public static void HospitalAllTest()

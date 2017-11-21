@@ -10,6 +10,9 @@ using TestStack.White.UIItems.WindowItems;
 
 namespace DentWhiteTest.Module.Doctor
 {
+    /// <summary>
+    /// 上传报告
+    /// </summary>
     public class UploadReportModule
     {
         public static void DoctorAllTest()
@@ -33,6 +36,7 @@ namespace DentWhiteTest.Module.Doctor
             {
                 return;
             }
+
             #region 上传报告
 
             //点击订单列表

@@ -10,7 +10,7 @@ using TestStack.White.UIItems.ListBoxItems;
 using DentWhiteTest.Helper;
 using System;
 using TestStack.White.InputDevices;
-using Mouse = Microsoft.VisualStudio.TestTools.UITesting.Mouse;
+//using Mouse = Microsoft.VisualStudio.TestTools.UITesting.Mouse;
 using Microsoft.VisualStudio.TestTools.UITesting;
 using Microsoft.VisualStudio.TestTools.UITest.Extension;
 
@@ -18,7 +18,7 @@ namespace DentWhiteTest.TestCase.DoctorClient
 {
     public class AddOrderTest
     {
-        private static UITestControl uIItemCustom;
+        //private static UITestControl uIItemCustom;
         #region 医生新增订单
         /// <summary>
         /// 点击新增订单，直接提交

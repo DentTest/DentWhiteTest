@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WhiteWindow" 
         mc:Ignorable="d"
-        Title="德雅自动化测试系统" Height="800" Width="1200">
+        Title="德雅自动化测试系统" Height="800" Width="1500">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="90"/>
@@ -17,8 +17,8 @@
     </Window.Resources>
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="400"/>
-            <ColumnDefinition Width="800"/>
+            <ColumnDefinition Width="430"/>
+            <ColumnDefinition Width="1070"/>
         </Grid.ColumnDefinitions>
         <StackPanel Margin="10">
             <DockPanel>
@@ -34,32 +34,40 @@
             <DockPanel>
                 <Button  x:Name="btnRole" Content="角色管理模块" Click="btnRole_Click"/>
                 <Button  x:Name="btnUser" Content="用户管理模块" Click="btnUser_Click"/>
+                <Button  x:Name="btnFactory" Content="技工厂模块" Click="btnFactory_Click"/>
             </DockPanel>
 
-            <Label Content="--- 医生端测试 ---" Margin="0,10,0,0"/>
-            <Button x:Name="btnDoctorLogin" Content="登录医生端模块" Click="btnDoctorLogin_Click" Width="120"/>
-            <Label Content="--- 技师测试 ---" Margin="0,5,0,0"/>
+            <Label Content="--- Dentlab 客户端测试 ---" Margin="0,10,0,0"/>
+            <Button x:Name="btnDoctorLogin" Content="登录模块" Click="btnDoctorLogin_Click" Width="120"/>
+            <Label Content="--- 技师端测试 ---" Margin="0,5,0,0"/>
             <DockPanel>
-                <Button x:Name="btnUploadReport" Content="上传报告" Click="btnUploadReport_Click" Width="120"/>
-                <Button x:Name="btnTechnician" Content="订单管理" Click="btnTechnician_Click" Width="120"/>
+                <Button Content="上传报告" Click="btnUploadReport_Click" Width="120"/>
+                <Button Content="订单管理" Width="120"/>
             </DockPanel>
-            <Label Content="--- 医生测试 ---" Margin="0,5,0,0"/>
+            <Label Content="--- 医生端测试 ---" Margin="0,5,0,0"/>
             <DockPanel>
-                <Button x:Name="btnAddOrder" Content="(医生)新增订单" Click="btnAddOrder_Click" Width="120"/>
+                <Button Content="新增订单" Click="btnDoctorAddOrder_Click" Width="120"/>
             </DockPanel>
-            <Label Content="--- 医生管理员测试 ---" Margin="0,5,0,0"/>
+            <Label Content="--- 医生管理员端测试 ---" Margin="0,5,0,0"/>
             <DockPanel>
-                <Button x:Name="btnSuperDoctor" Content="医生管理" Click="btnSuperDoctor_Click" Width="120"/>
+                <Button Content="新增订单" Click="btnDoctorAdminAddOrder_Click" Width="120"/>
+                <Button Content="订单管理" Click="btnTechnician_Click" Width="120"/>
+                <Button Content="医生管理" Click="btnDoctorAdmin_DoctorManage_Click" Width="120"/>
             </DockPanel>
-            <Label Content="--- 技师管理员测试 ---" Margin="0,5,0,0"/>
+            <Label Content="--- 技工厂管理员端测试 ---" Margin="0,5,0,0"/>
             <DockPanel>
                 <Button x:Name="btnFactoryHospital" Content="医院管理" Click="btnFactoryHospital_Click" Width="120"/>
-                <Button x:Name="btnFactoryAdmin" Content="技师管理" Click="btnFactoryAdmin_Click" Width="120"/>
+                <Button Content="医生管理" Click="btnFactory_DoctorManage_Click" Width="120"/>
+                <Button x:Name="btnFactoryAdmin" Content="技师管理" Width="120"/>
+            </DockPanel>
+            <DockPanel>
+                <Button Content="新增订单" Click="btnFactoryAddOrder_Click" Width="120"/>
+                <Button Content="订单管理" Click="btnTechnician_Click" Width="120"/>
             </DockPanel>
         </StackPanel>
         <StackPanel Grid.Column="1" HorizontalAlignment="Left">
             <Label Content="测试结果信息：" />
-            <ListBox x:Name="lbInfo" ItemsSource="{Binding Global.LstInfo}" Height="700" Width="750" FontStretch="Expanded" ItemStringFormat="\n" SelectionChanged="ListBox_SelectionChanged"/>
+            <ListBox x:Name="lbInfo" ItemsSource="{Binding Global.LstInfo}" Height="700" Width="1020" FontStretch="Expanded" ItemStringFormat="\n" />
         </StackPanel>
     </Grid>
 </Window>

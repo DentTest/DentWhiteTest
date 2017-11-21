@@ -11,6 +11,9 @@ using TestStack.White.UIItems.WindowItems;
 
 namespace DentWhiteTest.Module.Doctor
 {
+    /// <summary>
+    /// 技师模块测试
+    /// </summary>
     public class TechnicianListModule
     {
         public static void TechnicianAllTest()
